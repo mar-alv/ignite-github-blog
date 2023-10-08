@@ -1,8 +1,8 @@
-# imagem aqui
+![image](https://github.com/mar-alv/ignite-github-blog/assets/101023750/890a597b-166f-4630-a3a8-2152a3cd2a23)
 
 <h1 align='center'>ignite-github-blog</h1>
 
-My solution for the challenge project "GitHub Blog" proposed in the ReactJs module of [Ignite](https://www.rocketseat.com.br/ignite), a more than complete programming course offered by [Rocketseat's](https://www.rocketseat.com.br/).
+My solution for the challenge project "GitHub Blog", where the objective was to fetch issues published by the user in one of his repositories and show them on screen as a blog. This challenge was proposed in the ReactJs module of [Ignite](https://www.rocketseat.com.br/ignite), a more than complete programming course offered by [Rocketseat's](https://www.rocketseat.com.br/).
 
 ## Technologies used
 ![Axios](https://img.shields.io/badge/Axios-764ABC?style=for-the-badge&labelColor=white&logo=axios&logoColor=764ABC)
