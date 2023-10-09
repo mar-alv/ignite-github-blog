@@ -1,0 +1,7 @@
+export { ArrowUpRightFromSquareIcon } from './arrowUpRightFromSquareIcon'
+export { BuildingIcon } from './buildingIcon'
+export { CalendarDayIcon } from './calendarDayIcon'
+export { ChevronLeftIcon } from './chevronLeftIcon'
+export { CommentIcon } from './commentIcon'
+export { GitHubIcon } from './gitHubIcon'
+export { UserGroupIcon } from './userGroupIcon'
