@@ -1,4 +1,4 @@
-export interface IProfile {
+export interface User {
   avatar: string
   company: string
   description: string

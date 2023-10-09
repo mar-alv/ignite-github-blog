@@ -1,2 +1,2 @@
-export type { IProfile } from './iProfile'
-export type { IProfileResponse } from './iProfileResponse'
+export type { User } from './user'
+export type { UserResponse } from './userResponse'

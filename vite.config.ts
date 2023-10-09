@@ -10,6 +10,7 @@ export default defineConfig({
       '@components': path.resolve(__dirname, './src/components/'),
       '@libs': path.resolve(__dirname, './src/libs/'),
       '@interfaces': path.resolve(__dirname, './src/interfaces/'),
+      '@pages': path.resolve(__dirname, './src/pages/')
     },
   },
 })

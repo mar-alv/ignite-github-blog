@@ -26,7 +26,8 @@
     "paths": {
       "@components": ["src/components/"],
       "@interfaces": ["src/interfaces/"],
-      "@libs": ["src/libs/"]
+      "@libs": ["src/libs/"],
+      "@pages": ["src/pages/"]
     }
   },
   "include": ["src"],

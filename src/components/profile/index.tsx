@@ -5,16 +5,21 @@ import {
   GitHubIcon,
   UserGroupIcon,
 } from '@components'
-import { IProfile, IProfileResponse } from '@interfaces'
-import { ProfileHeader } from './styles'
+import { User, UserResponse } from '@interfaces'
+import {
+  ProfileAbout,
+  ProfileContainer,
+  ProfileHeader,
+  ProfileInfo,
+} from './styles'
 import { useEffect, useState } from 'react'
 
 export function Profile() {
-  const [user, setUser] = useState<IProfile | null>(null)
+  const [user, setUser] = useState<User | null>(null)
 
   async function fetchUser() {
     const response = await api.get('/users/mar-alv')
-    const data: IProfileResponse = response.data
+    const data: UserResponse = response.data
     const {
       avatar_url: avatar,
       bio: description,
@@ -24,6 +29,8 @@ export function Profile() {
       login: nickname,
       name,
     } = data
+
+    console.log(data)
 
     setUser({
       avatar,
@@ -43,23 +50,36 @@ export function Profile() {
   if (!user) return <></>
 
   return (
-    <div>
+    <ProfileContainer>
       <img src={user.avatar} alt="Imagem de avatar do usuário" />
-      <ProfileHeader>
-        <h2>{user.name}</h2>
-        <a href={user.url}>
-          GITHUB <ArrowUpRightFromSquareIcon />
-        </a>
-      </ProfileHeader>
-      <p>{user.bio}</p>
-      <span>
-        <GitHubIcon />
-        {user.nickname}
-        <BuildingIcon />
-        {user.company}
-        <UserGroupIcon />
-        {user.followers}
-      </span>
-    </div>
+
+      <ProfileAbout>
+        <ProfileHeader>
+          <h1>{user.name}</h1>
+          <a href={user.url}>
+            GITHUB <ArrowUpRightFromSquareIcon />
+          </a>
+        </ProfileHeader>
+
+        <p>{user.description}</p>
+
+        <ProfileInfo>
+          <h2>
+            <GitHubIcon />
+            {user.nickname}
+          </h2>
+
+          <h2>
+            <BuildingIcon />
+            {user.company}
+          </h2>
+
+          <h2>
+            <UserGroupIcon />
+            {user.followers} seguidores
+          </h2>
+        </ProfileInfo>
+      </ProfileAbout>
+    </ProfileContainer>
   )
 }

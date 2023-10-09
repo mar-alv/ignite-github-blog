@@ -1,4 +1,4 @@
-export interface IProfileResponse {
+export interface UserResponse {
   avatar_url: string
   company: string
   bio: string
