@@ -15,7 +15,7 @@ export function HomePage() {
 
     const data: IssuesDto = response.data
 
-    setIssues(issueMapper.toDomain(data))
+    setIssues(issueMapper.toDomains(data))
   }
 
   useEffect(() => {

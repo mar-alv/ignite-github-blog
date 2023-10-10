@@ -6,22 +6,33 @@ import {
   CommentIcon,
   GitHubIcon,
 } from '@components'
+import { dateUtils } from '@utils'
+import { Issue, IssueDto } from '@interfaces'
 import { IssueBody, IssueHeader } from './styles'
-import { Link } from 'react-router-dom'
-import { useEffect } from 'react'
+import { issueMapper } from '@mappers'
+import { Link, useParams } from 'react-router-dom'
+import { useCallback, useEffect, useState } from 'react'
 
-// TODO:
-// - Fetch issue info
 export function IssuePage() {
-  async function getIssue() {
-    const response = await api.get('/repos/mar-alv/ignite-github-blog/issues/1')
+  const { userNickname, issueId } = useParams()
 
-    console.log(response.data)
-  }
+  const [issue, setIssue] = useState<Issue | null>(null)
+
+  const getIssue = useCallback(async () => {
+    const response = await api.get(
+      `/repos/${userNickname}/ignite-github-blog/issues/${issueId}`,
+    )
+
+    const data: IssueDto = response.data
+
+    setIssue(issueMapper.toDomain(data))
+  }, [userNickname, issueId])
 
   useEffect(() => {
     getIssue()
-  }, [])
+  }, [getIssue])
+
+  if (!issue) return <></>
 
   return (
     <main>
@@ -30,29 +41,29 @@ export function IssuePage() {
           <ChevronLeftIcon />
           VOLTAR
         </Link>
-        <Link to="/">
+        <Link to={issue.url}>
           <ChevronLeftIcon />
           VER NO GITHUB
           <ArrowUpRightFromSquareIcon />
         </Link>
-        <h1>Título da issue</h1>
+        <h1>{issue.title}</h1>
 
         <p>
           <GitHubIcon />
-          Users nick
+          {issue.creatorNickname}
         </p>
 
         <p>
           <CalendarDayIcon />
-          Created at days
+          {dateUtils.toDaysSinceIssueWasPublished(issue.createdAt)}
         </p>
 
         <p>
           <CommentIcon />
-          Comments count
+          {issue.commentsCount}
         </p>
       </IssueHeader>
-      <IssueBody />
+      <IssueBody>{issue.description}</IssueBody>
     </main>
   )
 }

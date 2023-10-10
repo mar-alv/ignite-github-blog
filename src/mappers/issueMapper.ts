@@ -1,7 +1,7 @@
-import { Issue, IssuesDto } from '@interfaces'
+import { Issue, IssueDto, IssuesDto } from '@interfaces'
 
 export const issueMapper = {
-  toDomain(issuesResponse: IssuesDto): Issue[] {
+  toDomains(issuesResponse: IssuesDto): Issue[] {
     return issuesResponse.items.map((i) => {
       return {
         id: i.number,
@@ -13,5 +13,16 @@ export const issueMapper = {
         creatorNickname: i.user.login,
       }
     })
+  },
+  toDomain(issue: IssueDto): Issue {
+    return {
+      id: issue.number,
+      title: issue.title,
+      description: issue.body,
+      createdAt: issue.created_at,
+      url: issue.html_url,
+      commentsCount: issue.comments,
+      creatorNickname: issue.user.login,
+    }
   },
 }
