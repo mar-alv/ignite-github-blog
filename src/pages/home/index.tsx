@@ -1,19 +1,19 @@
 import { api } from '@libs'
-import { IISsue, IISsuesResponse } from '@interfaces'
-import { Issue, Profile, SearchBar } from '@components'
+import { Issue, IssuesDto } from '@interfaces'
+import { Issue as IssuePost, Profile, SearchBar } from '@components'
 import { issueMapper } from '@mappers'
 import { Issues } from './styles'
 import { useEffect, useState } from 'react'
 
 export function HomePage() {
-  const [issues, setIssues] = useState<IISsue[]>([])
+  const [issues, setIssues] = useState<Issue[]>([])
 
   async function getIssues() {
     const response = await api.get(
       '/search/issues?q=repo:mar-alv/ignite-github-blog',
     )
 
-    const data: IISsuesResponse = response.data
+    const data: IssuesDto = response.data
 
     setIssues(issueMapper.toDomain(data))
   }
@@ -28,7 +28,7 @@ export function HomePage() {
       <SearchBar issuesCount={issues.length} />
       <Issues>
         {issues.map((i) => (
-          <Issue key={i.id} issue={i} />
+          <IssuePost key={i.id} issue={i} />
         ))}
       </Issues>
     </main>

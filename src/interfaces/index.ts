@@ -1,5 +1,2 @@
-export type { IISsue } from './iIssue'
-export type { IISsueResponse } from './iIssueResponse'
-export type { IISsuesResponse } from './iIssuesResponse'
-export type { IUser } from './iUser'
-export type { IUserResponse } from './iUserResponse'
+export type * from './issue'
+export type * from './user'

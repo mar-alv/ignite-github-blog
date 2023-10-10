@@ -1,7 +1,7 @@
-import { IUser, IUserResponse } from '@interfaces'
+import { User, UserDto } from '@interfaces'
 
 export const profileMapper = {
-  toDomain(userResponse: IUserResponse): IUser {
+  toDomain(userResponse: UserDto): User {
     return {
       avatar: userResponse.avatar_url,
       name: userResponse.name,

@@ -1,16 +1,16 @@
 import { api } from '@libs'
-import { IUser } from '@interfaces'
+import { User } from '@interfaces'
 import { profileMapper } from '@mappers'
 import {
-  ReactNode,
   createContext,
+  ReactNode,
   useCallback,
   useEffect,
   useState,
 } from 'react'
 
 interface UserContextType {
-  user: IUser | null
+  user: User | null
   getUser: () => Promise<void>
 }
 
@@ -21,7 +21,7 @@ interface UserProviderProps {
 export const UserContext = createContext({} as UserContextType)
 
 export function UserProvider({ children }: UserProviderProps) {
-  const [user, setUser] = useState<IUser | null>(null)
+  const [user, setUser] = useState<User | null>(null)
 
   const getUser = useCallback(async () => {
     const response = await api.get('/users/mar-alv')

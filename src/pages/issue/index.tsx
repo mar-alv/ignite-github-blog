@@ -1,3 +1,4 @@
+import { api } from '@libs'
 import {
   ArrowUpRightFromSquareIcon,
   CalendarDayIcon,
@@ -7,11 +8,22 @@ import {
 } from '@components'
 import { IssueBody, IssueHeader } from './styles'
 import { Link } from 'react-router-dom'
+import { useEffect } from 'react'
 
 // TODO:
 // - Fetch issue info
 // - Get user info from context
 export function IssuePage() {
+  async function getIssue() {
+    const response = await api.get('/repos/mar-alv/ignite-github-blog/issues/1')
+
+    console.log(response.data)
+  }
+
+  useEffect(() => {
+    getIssue()
+  }, [])
+
   return (
     <main>
       <IssueHeader>
