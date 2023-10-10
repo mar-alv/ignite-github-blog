@@ -2,7 +2,7 @@ import { api } from '@libs'
 import { IISsue, IISsuesResponse } from '@interfaces'
 import { Issue, Profile, SearchBar } from '@components'
 import { issueMapper } from '@mappers'
-import { Issues } from './style'
+import { Issues } from './styles'
 import { useEffect, useState } from 'react'
 
 export function HomePage() {
