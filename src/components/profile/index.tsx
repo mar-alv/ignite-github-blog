@@ -1,32 +1,20 @@
-import { api } from '@libs'
 import {
   ArrowUpRightFromSquareIcon,
   BuildingIcon,
   GitHubIcon,
   UserGroupIcon,
 } from '@components'
-import { IUser } from '@interfaces'
 import {
   ProfileAbout,
   ProfileContainer,
   ProfileHeader,
   ProfileInfo,
 } from './styles'
-import { profileMapper } from '@mappers'
-import { useEffect, useState } from 'react'
+import { useContext } from 'react'
+import { UserContext } from '@contexts'
 
 export function Profile() {
-  const [user, setUser] = useState<IUser | null>(null)
-
-  async function getUser() {
-    const response = await api.get('/users/mar-alv')
-
-    setUser(profileMapper.toDomain(response.data))
-  }
-
-  useEffect(() => {
-    getUser()
-  }, [])
+  const { user } = useContext(UserContext)
 
   if (!user) return <></>
 
