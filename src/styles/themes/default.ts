@@ -14,4 +14,25 @@ export const defaultTheme = {
   'base-profile': '#0B1B2B',
   'base-background': '#071422',
   'base-input': '#040F1A',
+
+  fontSize: {
+    'title-l': '1.5rem',
+    'title-m': '1.25rem',
+    'title-s': '1.125rem',
+
+    'text-m': '1rem',
+    'text-s': '.875rem',
+
+    link: '.75rem',
+  },
+  lineHeight: {
+    'title-l': '130%',
+    'title-m': '160%',
+    'title-s': '160%',
+
+    'text-m': '160%',
+    'text-s': '160%',
+
+    link: '160%',
+  },
 } as const

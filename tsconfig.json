@@ -27,7 +27,8 @@
       "@components": ["src/components/"],
       "@interfaces": ["src/interfaces/"],
       "@libs": ["src/libs/"],
-      "@pages": ["src/pages/"]
+      "@pages": ["src/pages/"],
+      "@utils": ["src/utils/"]
     }
   },
   "include": ["src"],

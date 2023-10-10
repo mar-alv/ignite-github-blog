@@ -5,7 +5,7 @@ import {
   GitHubIcon,
   UserGroupIcon,
 } from '@components'
-import { User, UserResponse } from '@interfaces'
+import { IUser, IUserResponse } from '@interfaces'
 import {
   ProfileAbout,
   ProfileContainer,
@@ -15,11 +15,11 @@ import {
 import { useEffect, useState } from 'react'
 
 export function Profile() {
-  const [user, setUser] = useState<User | null>(null)
+  const [user, setUser] = useState<IUser | null>(null)
 
   async function fetchUser() {
     const response = await api.get('/users/mar-alv')
-    const data: UserResponse = response.data
+    const data: IUserResponse = response.data
     const {
       avatar_url: avatar,
       bio: description,
@@ -29,8 +29,6 @@ export function Profile() {
       login: nickname,
       name,
     } = data
-
-    console.log(data)
 
     setUser({
       avatar,
@@ -56,7 +54,7 @@ export function Profile() {
       <ProfileAbout>
         <ProfileHeader>
           <h1>{user.name}</h1>
-          <a href={user.url}>
+          <a href={user.url} target="_blank" rel="noreferrer">
             GITHUB <ArrowUpRightFromSquareIcon />
           </a>
         </ProfileHeader>
@@ -64,20 +62,20 @@ export function Profile() {
         <p>{user.description}</p>
 
         <ProfileInfo>
-          <h2>
+          <p>
             <GitHubIcon />
             {user.nickname}
-          </h2>
+          </p>
 
-          <h2>
+          <p>
             <BuildingIcon />
             {user.company}
-          </h2>
+          </p>
 
-          <h2>
+          <p>
             <UserGroupIcon />
             {user.followers} seguidores
-          </h2>
+          </p>
         </ProfileInfo>
       </ProfileAbout>
     </ProfileContainer>

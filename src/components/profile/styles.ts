@@ -21,13 +21,10 @@ export const ProfileContainer = styled.div`
 export const ProfileAbout = styled.div`
   p {
     margin-top: 1rem;
-    color: ${(props) => props.theme['base-text']};
-  }
 
-  h2 {
-    font-size: 1rem;
-    font-weight: normal;
-    color: ${(props) => props.theme['base-subtitle']};
+    font-size: ${(props) => props.theme.fontSize['text-m']};
+    line-height: ${(props) => props.theme.lineHeight['text-m']};
+    color: ${(props) => props.theme['base-text']};
   }
 `
 
@@ -36,14 +33,17 @@ export const ProfileHeader = styled.header`
   justify-content: space-between;
 
   h1 {
+    font-size: ${(props) => props.theme.fontSize['title-l']};
+    line-height: ${(props) => props.theme.lineHeight['title-l']};
     color: ${(props) => props.theme['base-title']};
   }
 
   a {
-    font-size: 0.75rem;
+    font-size: ${(props) => props.theme.link};
     font-weight: bold;
-    text-decoration: none;
+    line-height: ${(props) => props.theme.lineHeight.link};
     color: ${(props) => props.theme.blue};
+    text-decoration: none;
   }
 
   a svg {
@@ -63,5 +63,9 @@ export const ProfileInfo = styled.div`
 
   svg {
     margin-right: 0.5rem;
+  }
+
+  p {
+    color: ${(props) => props.theme['base-subtitle']};
   }
 `
