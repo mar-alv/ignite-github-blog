@@ -15,6 +15,10 @@ export const dateUtils = {
       return `Há ${daysPassed} dia` + (daysPassed > 1 ? 's' : '')
     }
 
+    if (hoursPassed < 1) {
+      return 'Há pouco'
+    }
+
     return `Há ${hoursPassed} hora` + (hoursPassed > 1 ? 's' : '')
   },
   getTimeDifferenceInMilliseconds(date: Date) {
