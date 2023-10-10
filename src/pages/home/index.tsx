@@ -1,6 +1,6 @@
 import { IISsue } from '@interfaces'
 import { Issue, Profile, SearchBar } from '@components'
-import { Issues, PageContainer } from './style'
+import { Issues } from './style'
 
 export function HomePage() {
   const issues: IISsue[] = [
@@ -49,7 +49,7 @@ export function HomePage() {
   ]
 
   return (
-    <PageContainer>
+    <main>
       <Profile />
       <SearchBar issuesCount={issues.length} />
       <Issues>
@@ -57,6 +57,6 @@ export function HomePage() {
           <Issue key={i.id} issue={i} />
         ))}
       </Issues>
-    </PageContainer>
+    </main>
   )
 }
