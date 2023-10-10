@@ -12,7 +12,6 @@ import { useEffect } from 'react'
 
 // TODO:
 // - Fetch issue info
-// - Get user info from context
 export function IssuePage() {
   async function getIssue() {
     const response = await api.get('/repos/mar-alv/ignite-github-blog/issues/1')
