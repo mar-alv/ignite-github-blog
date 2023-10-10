@@ -53,6 +53,11 @@ export const ProfileHeader = styled.header`
   a:hover {
     text-decoration: underline;
   }
+
+  a:focus {
+    outline-offset: 2px;
+    outline: 1px solid ${(props) => props.theme.blue};
+  }
 `
 
 export const ProfileInfo = styled.div`
