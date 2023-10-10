@@ -5,44 +5,27 @@ import {
   GitHubIcon,
   UserGroupIcon,
 } from '@components'
-import { IUser, IUserResponse } from '@interfaces'
+import { IUser } from '@interfaces'
 import {
   ProfileAbout,
   ProfileContainer,
   ProfileHeader,
   ProfileInfo,
 } from './styles'
+import { profileMapper } from '@mappers'
 import { useEffect, useState } from 'react'
 
 export function Profile() {
   const [user, setUser] = useState<IUser | null>(null)
 
-  async function fetchUser() {
+  async function getUser() {
     const response = await api.get('/users/mar-alv')
-    const data: IUserResponse = response.data
-    const {
-      avatar_url: avatar,
-      bio: description,
-      company,
-      followers,
-      html_url: url,
-      login: nickname,
-      name,
-    } = data
 
-    setUser({
-      avatar,
-      description,
-      company,
-      followers,
-      name,
-      nickname,
-      url,
-    })
+    setUser(profileMapper.toDomain(response.data))
   }
 
   useEffect(() => {
-    fetchUser()
+    getUser()
   }, [])
 
   if (!user) return <></>

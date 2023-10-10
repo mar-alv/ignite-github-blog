@@ -1,12 +1,11 @@
 import { IISsue } from '@interfaces'
 import { IssueContainer, IssueHeader } from './style'
-import { stringUtils } from '@utils'
+import { dateUtils, stringUtils } from '@utils'
 
 interface Props {
   issue: IISsue
 }
 
-// TODO: Date must be converted
 export function Issue({ issue }: Props) {
   const { title, description, createdAt } = issue
 
@@ -14,9 +13,9 @@ export function Issue({ issue }: Props) {
     <IssueContainer>
       <IssueHeader>
         <h2>{title}</h2>
-        <span>Há {createdAt} dia</span>
+        <span>{dateUtils.toDaysSinceIssueWasPublished(createdAt)}</span>
       </IssueHeader>
-      <p>{stringUtils.short(description)}</p>
+      <p>{stringUtils.toShortened(description)}</p>
     </IssueContainer>
   )
 }

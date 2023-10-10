@@ -4,7 +4,14 @@ export const IssueContainer = styled.article`
   padding: 2rem;
   border-radius: 10px;
 
+  cursor: pointer;
+
   background-color: ${(props) => props.theme['base-post']};
+
+  &:focus,
+  &:hover {
+    outline: 2px solid ${(props) => props.theme.blue};
+  }
 
   p {
     margin-top: 2rem;
@@ -20,7 +27,7 @@ export const IssueHeader = styled.header`
   justify-content: space-between;
 
   h2 {
-    max-width: 280px;
+    max-width: 250px;
 
     font-size: ${(props) => props.theme.fontSize['title-m']};
     line-height: ${(props) => props.theme.lineHeight['title-m']};
