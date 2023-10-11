@@ -1,6 +1,6 @@
 import { api } from '@libs'
 import { Issue, IssuesDto } from '@interfaces'
-import { Issue as IssuePost, Profile, SearchBar } from '@components'
+import { Issue as IssuePost, SearchBar, UserProfile } from '@components'
 import { issueMapper } from '@mappers'
 import { Issues } from './styles'
 import { useEffect, useState } from 'react'
@@ -24,7 +24,7 @@ export function HomePage() {
 
   return (
     <main>
-      <Profile />
+      <UserProfile />
       <SearchBar issuesCount={issues.length} />
       <Issues>
         {issues.map((i) => (

@@ -1,16 +1,9 @@
 import { api } from '@libs'
-import {
-  ArrowUpRightFromSquareIcon,
-  CalendarDayIcon,
-  ChevronLeftIcon,
-  CommentIcon,
-  GitHubIcon,
-} from '@components'
-import { dateUtils } from '@utils'
 import { Issue, IssueDto } from '@interfaces'
-import { IssueBody, IssueHeader } from './styles'
+import { IssueBody } from './styles'
+import { IssueProfile } from '@components'
 import { issueMapper } from '@mappers'
-import { Link, useParams } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import { useCallback, useEffect, useState } from 'react'
 
 export function IssuePage() {
@@ -36,33 +29,7 @@ export function IssuePage() {
 
   return (
     <main>
-      <IssueHeader>
-        <Link to="/">
-          <ChevronLeftIcon />
-          VOLTAR
-        </Link>
-        <Link to={issue.url}>
-          <ChevronLeftIcon />
-          VER NO GITHUB
-          <ArrowUpRightFromSquareIcon />
-        </Link>
-        <h1>{issue.title}</h1>
-
-        <p>
-          <GitHubIcon />
-          {issue.creatorNickname}
-        </p>
-
-        <p>
-          <CalendarDayIcon />
-          {dateUtils.toDaysSinceIssueWasPublished(issue.createdAt)}
-        </p>
-
-        <p>
-          <CommentIcon />
-          {issue.commentsCount}
-        </p>
-      </IssueHeader>
+      <IssueProfile issue={issue} />
       <IssueBody>{issue.description}</IssueBody>
     </main>
   )

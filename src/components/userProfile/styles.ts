@@ -32,31 +32,8 @@ export const ProfileHeader = styled.header`
   display: flex;
   justify-content: space-between;
 
-  h1 {
-    font-size: ${(props) => props.theme.fontSize['title-l']};
-    line-height: ${(props) => props.theme.lineHeight['title-l']};
-    color: ${(props) => props.theme['base-title']};
-  }
-
-  a {
-    font-size: ${(props) => props.theme.link};
-    font-weight: bold;
-    line-height: ${(props) => props.theme.lineHeight.link};
-    color: ${(props) => props.theme.blue};
-    text-decoration: none;
-  }
-
   a svg {
     margin-left: 0.5rem;
-  }
-
-  a:hover {
-    text-decoration: underline;
-  }
-
-  a:focus {
-    outline-offset: 2px;
-    outline: 1px solid ${(props) => props.theme.blue};
   }
 `
 
@@ -68,9 +45,11 @@ export const ProfileInfo = styled.div`
 
   svg {
     margin-right: 0.5rem;
+
+    color: ${(props) => props.theme['base-label']};
   }
 
-  p {
+  span {
     color: ${(props) => props.theme['base-subtitle']};
   }
 `

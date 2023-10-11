@@ -23,7 +23,7 @@ export const defaultTheme = {
     'text-m': '1rem',
     'text-s': '.875rem',
 
-    link: '.75rem',
+    link: '0.75rem',
   },
   lineHeight: {
     'title-l': '130%',

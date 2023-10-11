@@ -15,7 +15,7 @@ import { profileMapper } from '@mappers'
 import { User } from '@interfaces'
 import { useEffect, useState } from 'react'
 
-export function Profile() {
+export function UserProfile() {
   const [user, setUser] = useState<User | null>(null)
 
   async function getUser() {
@@ -45,20 +45,20 @@ export function Profile() {
         <p>{user.description}</p>
 
         <ProfileInfo>
-          <p>
+          <span>
             <GitHubIcon />
             {user.nickname}
-          </p>
+          </span>
 
-          <p>
+          <span>
             <BuildingIcon />
             {user.company}
-          </p>
+          </span>
 
-          <p>
+          <span>
             <UserGroupIcon />
             {user.followers} seguidores
-          </p>
+          </span>
         </ProfileInfo>
       </ProfileAbout>
     </ProfileContainer>
