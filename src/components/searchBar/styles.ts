@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const SearchBarContainer = styled.div`
+export const SearchBarContainer = styled.form`
   margin-top: 4.5rem;
 
   input {
@@ -24,7 +24,7 @@ export const SearchBarContainer = styled.div`
   }
 
   input:focus {
-    outline: 1px solid ${(props) => props.theme.blue};
+    outline: 2px solid ${(props) => props.theme.blue};
   }
 `
 

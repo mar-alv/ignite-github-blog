@@ -1,6 +1,7 @@
 export const dateUtils = {
   toDaysSinceIssueWasPublished(value: string) {
     const timeDifferenceInMilliseconds = this.getTimeDifferenceInMilliseconds(
+      new Date(),
       new Date(value),
     )
 
@@ -21,8 +22,8 @@ export const dateUtils = {
 
     return `Há ${hoursPassed} hora` + (hoursPassed > 1 ? 's' : '')
   },
-  getTimeDifferenceInMilliseconds(date: Date) {
-    return new Date().getTime() - date.getTime()
+  getTimeDifferenceInMilliseconds(date1: Date, date2: Date) {
+    return date1.getTime() - date2.getTime()
   },
   getDaysPassed(hoursPassed: number, timeInMilliseconds: number) {
     return (timeInMilliseconds / hoursPassed) * 24
