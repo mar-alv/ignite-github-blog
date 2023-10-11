@@ -7,8 +7,8 @@ import {
 } from '@components'
 import { dateUtils } from '@utils'
 import { Issue } from 'src/interfaces'
-import { ProfileContainer, ProfileHeader, ProfileInfo } from './styles'
 import { Link } from 'react-router-dom'
+import { ProfileContainer, ProfileHeader, ProfileInfo } from './styles'
 
 interface Props {
   issue: Issue
