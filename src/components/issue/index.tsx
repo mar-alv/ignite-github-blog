@@ -5,9 +5,10 @@ import { useNavigate } from 'react-router-dom'
 
 interface Props {
   issue: IIssue
+  tabIndex: number
 }
 
-export function Issue({ issue }: Props) {
+export function Issue({ issue, tabIndex }: Props) {
   const { id, title, description, createdAt, creatorNickname } = issue
 
   const navigate = useNavigate()
@@ -17,7 +18,7 @@ export function Issue({ issue }: Props) {
   }
 
   return (
-    <IssueContainer onClick={handleSeeIssue}>
+    <IssueContainer onClick={handleSeeIssue} tabIndex={tabIndex}>
       <IssueHeader>
         <h2>{title}</h2>
         <span>{dateUtils.toDaysSinceIssueWasPublished(createdAt)}</span>

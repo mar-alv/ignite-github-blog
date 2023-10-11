@@ -11,7 +11,7 @@ export function SearchBar({ issuesCount }: Props) {
         <h3>Publicações</h3>
         <span>{issuesCount} publicações</span>
       </SearchBarHeader>
-      <input type="text" placeholder="Buscar conteúdo" />
+      <input type="text" placeholder="Buscar conteúdo" tabIndex={2} />
     </SearchBarContainer>
   )
 }

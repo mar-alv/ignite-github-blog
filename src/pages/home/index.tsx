@@ -27,8 +27,8 @@ export function HomePage() {
       <UserProfile />
       <SearchBar issuesCount={issues.length} />
       <Issues>
-        {issues.map((i) => (
-          <IssuePost key={i.id} issue={i} />
+        {issues.map((i, index) => (
+          <IssuePost key={i.id} issue={i} tabIndex={3 + index} />
         ))}
       </Issues>
     </main>

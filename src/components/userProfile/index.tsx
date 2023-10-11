@@ -37,7 +37,7 @@ export function UserProfile() {
       <ProfileAbout>
         <ProfileHeader>
           <h1>{user.name}</h1>
-          <a href={user.url} target="_blank" rel="noreferrer">
+          <a href={user.url} target="_blank" rel="noreferrer" tabIndex={1}>
             GITHUB <ArrowUpRightFromSquareIcon />
           </a>
         </ProfileHeader>
