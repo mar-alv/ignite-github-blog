@@ -1,5 +1,5 @@
 import { IssuesContext } from '@contexts'
-import { SearchContainer, SearchHeader, StyledHeader, StyledInput, StyledSearch } from './styles'
+import { StyledHeader, StyledInput, StyledSearch } from './styles'
 import { useContext } from 'react'
 import { useForm } from 'react-hook-form'
 import * as z from 'zod'

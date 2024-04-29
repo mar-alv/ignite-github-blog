@@ -1,23 +1,23 @@
 import styled from 'styled-components'
 
 export const StyledUser = styled.section`
-  padding: 2rem 2.5rem;
-  gap: 2rem;
+  padding: 3.2rem 4rem;
+  gap: 3.2rem;
   display: flex;
 
-  border-radius: 10px;
+  border-radius: 1rem;
   background-color: ${(props) => props.theme['base-profile']};
 
   img {
-    width: 9.25rem;
-    height: 9.25rem;
+    width: 14.8rem;
+    height: 14.8rem;
 
-    border-radius: 8px;
+    border-radius: .8rem;
   }
 `
 
 export const StyledDescription = styled.p`
-	margin-top: 1rem;
+	margin-top: 1.6rem;
 
 	color: ${(props) => props.theme['base-text']};
 `
@@ -27,15 +27,15 @@ export const StyledHeader = styled.div`
   justify-content: space-between;
 
   a {
-		gap: .5rem;
+		gap: .8rem;
 		display: flex;
 		align-items: center;
   }
 `
 
 export const StyledInfo = styled.div`
-  margin-top: 1.5rem;
-  gap: 1.5rem;
+  margin-top: 2.4rem;
+  gap: 2.4rem;
   display: flex;
 
   a {
@@ -43,7 +43,7 @@ export const StyledInfo = styled.div`
   }
 
   span {
-		gap: .5rem;
+		gap: .8rem;
 		display: flex;
 		align-items: center;
 

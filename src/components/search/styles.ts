@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const StyledSearch = styled.form`
-  margin-top: 4.5rem;
+  margin-top: 7.2rem;
 `
 
 export const StyledHeader = styled.div`
@@ -19,11 +19,11 @@ export const StyledHeader = styled.div`
 
 export const StyledInput = styled.input`
 	width: 100%;
-	margin-top: 0.75rem;
-	padding: 0.75rem;
+	margin-top: 1.2rem;
+	padding: 1.2rem;
 
-	border-radius: 6px;
-	border: 1px solid ${(props) => props.theme['base-border']};
+	border-radius: .6rem;
+	border: .1rem solid ${(props) => props.theme['base-border']};
 	color: ${(props) => props.theme['base-text']};
 	background-color: ${(props) => props.theme['base-input']};
 

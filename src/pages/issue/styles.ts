@@ -2,7 +2,7 @@ import Markdown from 'react-markdown'
 import styled from 'styled-components'
 
 export const StyledDescription = styled(Markdown)`
-  margin-top: 2.5rem;
+  margin-top: 4rem;
 
   color: ${(props) => props.theme['base-text']};
 
@@ -10,30 +10,30 @@ export const StyledDescription = styled(Markdown)`
   h1,
   h2,
   h3 {
-    margin-top: 1rem;
+    margin-top: 1.6rem;
   }
 
   a {
-    font-size: 1rem;
+    font-size: 1.6rem;
   }
 
   li {
-    margin-top: 0.5rem;
+    margin-top: 0.8rem;
   }
 
   img {
-    max-width: 832px;
+    max-width: 83.2rem;
   }
 `
 
 export const StyledIssueHeader = styled.header`
-  padding: 2rem;
+  padding: 3.2rem;
 
-  border-radius: 10px;
+  border-radius: 1rem;
   background-color: ${(props) => props.theme['base-profile']};
 
   h1 {
-    margin-top: 1.25rem;
+    margin-top: 2rem;
   }
 `
 
@@ -42,19 +42,19 @@ export const StyledIssueLinks = styled.div`
   justify-content: space-between;
 
   a {
-		gap: .5rem;
+		gap: .8rem;
 		display: flex;
 		align-items: center;
   }
 `
 
 export const StyledIssueInfo = styled.div`
-  margin-top: 0.5rem;
-  gap: 1.5rem;
+  margin-top: 0.8rem;
+  gap: 2.4rem;
   display: flex;
 
 	span {
-		gap: .5rem;
+		gap: .8rem;
 		display: flex;
 		align-items: center;
 
