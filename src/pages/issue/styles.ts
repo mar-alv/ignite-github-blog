@@ -13,11 +13,25 @@ export const StyledDescription = styled(Markdown)`
     margin-top: 1.6rem;
   }
 
-  a {
+	h3 {
+		font-size: 3.2rem;
+	}
+
+	h3 {
+		font-size: 2rem;
+	}
+
+  a,
+	p {
     font-size: 1.6rem;
   }
 
+	p {
+		max-width: initial;
+	}
+
   li {
+    font-size: 1.4rem;
     margin-top: 0.8rem;
   }
 

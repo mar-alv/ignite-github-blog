@@ -60,7 +60,7 @@ export function IssuePage() {
 					{title}
 				</h1>
 
-				<StyledIssueInfo>
+				<StyledIssueInfo className='text-m'>
 					<span>
 						<GitHubIcon />
 						{creatorNickname}
