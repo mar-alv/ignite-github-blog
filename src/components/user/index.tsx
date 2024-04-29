@@ -36,7 +36,9 @@ export function User() {
 
 			<div>
 				<StyledHeader>
-					<h1>{user.name}</h1>
+					<h1 className='title-l'>
+						{user.name}
+					</h1>
 
 					<a href={user.url} target='_blank' rel='noreferrer' tabIndex={1}>
 						GITHUB <ArrowUpRightFromSquareIcon />
@@ -47,7 +49,7 @@ export function User() {
 					{user.description}
 				</StyledDescription>
 
-				<StyledInfo>
+				<StyledInfo className='text-m'>
 					<span>
 						<GitHubIcon />
 						{user.nickname}

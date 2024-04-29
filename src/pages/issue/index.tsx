@@ -56,7 +56,9 @@ export function IssuePage() {
 					</Link>
 				</StyledIssueLinks>
 
-				<h1>{title}</h1>
+				<h1 className='title-l'>
+					{title}
+				</h1>
 
 				<StyledIssueInfo>
 					<span>
