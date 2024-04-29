@@ -1,4 +1,5 @@
-import bgImg from '../assets/bg-img.png'
+import cover from '../assets/cover.jpg'
+import logo from '../assets/logo.png'
 import { createGlobalStyle } from 'styled-components'
 
 export const GlobalStyle = createGlobalStyle`
@@ -27,10 +28,10 @@ export const GlobalStyle = createGlobalStyle`
     height: 100vh;
     min-height: 100svh;
 
-    background-color:  ${(props) => props.theme['base-background']};
-    background-image: url(${bgImg});
+    background-color: ${(props) => props.theme['base-background']};
+    background-image: url(${cover});
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: 100% 40vh;
   }
 
   body,
@@ -43,7 +44,7 @@ export const GlobalStyle = createGlobalStyle`
     width: 100%;
     max-width: 88rem;
     margin:  20rem auto;
-    padding: 0 1.5rem;
+    padding: 0 2.4rem;
   }
 
 	h1,

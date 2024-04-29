@@ -1,4 +1,4 @@
-import { Issue, Search, User } from '@components'
+import { Issue, Logo, Search, User } from '@components'
 import { IssuesContext } from '@contexts'
 import { StyledIssues } from './styles'
 import { useContext } from 'react'
@@ -8,6 +8,8 @@ export function HomePage() {
 
   return (
     <div id='app'>
+			<Logo />
+
       <User />
 
 			<main>
