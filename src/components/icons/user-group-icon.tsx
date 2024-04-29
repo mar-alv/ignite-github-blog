@@ -7,7 +7,7 @@ export function UserGroupIcon() {
     <FontAwesomeIcon
       color={defaultTheme['base-label']}
       icon={faUserGroup}
-      size="1x"
+      size='1x'
     />
   )
 }

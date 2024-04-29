@@ -38,9 +38,9 @@ export function Search({ issuesCount }: Props) {
 
       <StyledInput
 				className='text-m'
-        placeholder="Buscar conteúdo"
+        placeholder='Buscar conteúdo'
         tabIndex={2}
-        type="text"
+        type='text'
         {...register('query')}
       />
     </StyledSearch>

@@ -45,7 +45,7 @@ export function IssuePage() {
     <div id='app'>
 			<StyledIssueHeader>
 				<StyledIssueLinks>
-					<Link to="/">
+					<Link to='/'>
 						<ChevronLeftIcon />
 						VOLTAR
 					</Link>

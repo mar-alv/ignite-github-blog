@@ -7,7 +7,7 @@ export function BuildingIcon() {
     <FontAwesomeIcon
       color={defaultTheme['base-label']}
       icon={faBuilding}
-      size="1x"
+      size='1x'
     />
   )
 }

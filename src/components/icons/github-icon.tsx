@@ -7,7 +7,7 @@ export function GitHubIcon() {
     <FontAwesomeIcon
       color={defaultTheme['base-label']}
       icon={faGithub}
-      size="1x"
+      size='1x'
     />
   )
 }
