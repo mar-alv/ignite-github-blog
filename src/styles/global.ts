@@ -71,6 +71,7 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   a {
+		cursor: pointer;
     text-decoration: none;
     font-size: ${(props) => props.theme.fontSize.link};
     font-weight: bold;
