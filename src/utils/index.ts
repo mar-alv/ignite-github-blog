@@ -1,3 +1,3 @@
-export { arrayUtils } from './arrayUtils'
-export { dateUtils } from './dateUtils'
-export { stringUtils } from './stringUtils'
+export { arrayUtils } from './array-utils'
+export { dateUtils } from './date-utils'
+export { stringUtils } from './string-utils'

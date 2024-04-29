@@ -1,6 +1,6 @@
 import { dateUtils, stringUtils } from '@utils'
 import { Issue as IIssue } from '@interfaces'
-import { IssueContainer, IssueHeader } from './style'
+import { StyledDescription, StyledHeader, StyledIssue } from './style'
 import { useNavigate } from 'react-router-dom'
 
 interface Props {
@@ -18,12 +18,20 @@ export function Issue({ issue, tabIndex }: Props) {
   }
 
   return (
-    <IssueContainer onClick={handleSeeIssue} tabIndex={tabIndex}>
-      <IssueHeader>
-        <h2>{title}</h2>
-        <span>{dateUtils.toDaysSinceIssueWasPublished(createdAt)}</span>
-      </IssueHeader>
-      <p>{stringUtils.toShortened(description)}</p>
-    </IssueContainer>
+    <StyledIssue onClick={handleSeeIssue} tabIndex={tabIndex}>
+      <StyledHeader>
+        <h2 className='title-m'>
+					{title}
+				</h2>
+
+        <span className='text-s'>
+					{dateUtils.toDaysSinceIssueWasPublished(createdAt)}
+				</span>
+      </StyledHeader>
+
+      <StyledDescription className='text-m'>
+				{stringUtils.toShortened(description)}
+			</StyledDescription>
+    </StyledIssue>
   )
 }

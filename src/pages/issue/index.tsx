@@ -1,9 +1,21 @@
 import { api } from '@libs'
+import {
+	ArrowUpRightFromSquareIcon,
+	CalendarDayIcon,
+	ChevronLeftIcon,
+	CommentIcon,
+	GitHubIcon
+} from '@components'
+import { dateUtils } from '@utils'
 import { Issue, IssueDto } from '@interfaces'
-import { IssueBody } from './styles'
-import { IssueProfile } from '@components'
 import { issueMapper } from '@mappers'
-import { useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
+import {
+	StyledDescription,
+	StyledIssueHeader,
+	StyledIssueInfo,
+	StyledIssueLinks
+} from './styles'
 import { useCallback, useEffect, useState } from 'react'
 
 export function IssuePage() {
@@ -27,10 +39,48 @@ export function IssuePage() {
 
   if (!issue) return <></>
 
+	const { commentsCount, createdAt, creatorNickname, description, title, url } = issue
+
   return (
-    <main>
-      <IssueProfile issue={issue} />
-      <IssueBody>{issue.description}</IssueBody>
-    </main>
+    <div id='app'>
+			<StyledIssueHeader>
+				<StyledIssueLinks>
+					<Link to="/">
+						<ChevronLeftIcon />
+						VOLTAR
+					</Link>
+
+					<Link to={url}>
+						VER NO GITHUB
+						<ArrowUpRightFromSquareIcon />
+					</Link>
+				</StyledIssueLinks>
+
+				<h1>{title}</h1>
+
+				<StyledIssueInfo>
+					<span>
+						<GitHubIcon />
+						{creatorNickname}
+					</span>
+
+					<span>
+						<CalendarDayIcon />
+						{dateUtils.toDaysSinceIssueWasPublished(createdAt)}
+					</span>
+
+					<span>
+						<CommentIcon />
+						{`${commentsCount} comentário${
+							commentsCount > 1 ? 's' : ''
+						}`}
+					</span>
+				</StyledIssueInfo>
+			</StyledIssueHeader>
+
+			<main>
+				<StyledDescription>{description}</StyledDescription>
+			</main>
+    </div>
   )
 }

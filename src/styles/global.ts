@@ -1,5 +1,5 @@
 import { createGlobalStyle } from 'styled-components'
-import backgroundImage from '../assets/backgroundImage.png'
+import bgImg from '../assets/bg-img.png'
 
 export const GlobalStyle = createGlobalStyle`
   * {
@@ -12,7 +12,7 @@ export const GlobalStyle = createGlobalStyle`
     -webkit-font-smoothing: antialiased;
     
     background-color:  ${(props) => props.theme['base-background']};
-    background-image: url(${backgroundImage});
+    background-image: url(${bgImg});
     background-repeat: no-repeat;
     background-size: contain;
   }
@@ -21,7 +21,7 @@ export const GlobalStyle = createGlobalStyle`
     font-family: 'Nunito', sans-serif;
   }
 
-  main {
+  #app {
     width: 100%;
     max-width: 880px;
     margin: 12.5rem auto;
@@ -50,4 +50,29 @@ export const GlobalStyle = createGlobalStyle`
     outline-offset: 2px;
     outline: 1px solid ${(props) => props.theme.blue};
   }
+
+  .title-l {
+    font-size: ${(props) => props.theme.fontSize['title-l']};
+    line-height: ${(props) => props.theme.lineHeight['title-l']};
+	}
+
+  .title-m {
+    font-size: ${(props) => props.theme.fontSize['title-m']};
+    line-height: ${(props) => props.theme.lineHeight['title-m']};
+	}
+
+  .title-s {
+    font-size: ${(props) => props.theme.fontSize['title-s']};
+    line-height: ${(props) => props.theme.lineHeight['title-s']};
+	}
+
+  .text-m {
+    font-size: ${(props) => props.theme.fontSize['text-m']};
+    line-height: ${(props) => props.theme.lineHeight['text-m']};
+	}
+
+  .text-s {
+    font-size: ${(props) => props.theme.fontSize['text-s']};
+    line-height: ${(props) => props.theme.lineHeight['text-s']};
+	}
 `

@@ -1,1 +1,1 @@
-export { IssuesContext, IssuesProvider } from './issuesContext'
+export { IssuesContext, IssuesProvider } from './issues-context'
