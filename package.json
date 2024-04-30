@@ -6,9 +6,9 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "lint": "eslint src --ext .tsx,.ts",
-    "lint:fix": "eslint src --ext .tsx,.ts --fix",
-    "preview": "vite preview"
+    "build-storybook": "storybook build",
+    "preview": "vite preview",
+    "storybook": "storybook dev -p 6006"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^6.4.2",
@@ -27,13 +27,25 @@
     "zod": "^3.22.4"
   },
   "devDependencies": {
-    "@rocketseat/eslint-config": "^2.1.0",
+    "@chromatic-com/storybook": "^1.2.23",
+    "@storybook/addon-a11y": "^8.0.4",
+    "@storybook/addon-essentials": "^8.0.1",
+    "@storybook/addon-interactions": "^8.0.1",
+    "@storybook/addon-links": "^8.0.1",
+    "@storybook/addon-onboarding": "^8.0.1",
+    "@storybook/addon-themes": "^8.0.2",
+    "@storybook/blocks": "^8.0.1",
+    "@storybook/preview-api": "^8.0.2",
+    "@storybook/react": "^8.0.1",
+    "@storybook/react-vite": "^8.0.1",
+    "@storybook/test": "^8.0.1",
     "@types/react": "^18.2.15",
     "@types/react-dom": "^18.2.7",
     "@types/styled-components": "^5.1.28",
     "@typescript-eslint/eslint-plugin": "^6.0.0",
     "@typescript-eslint/parser": "^6.0.0",
     "@vitejs/plugin-react": "^4.0.3",
+    "storybook": "^8.0.1",
     "typescript": "^5.0.2",
     "vite": "^4.4.5",
     "vite-plugin-alias": "^0.1.1"
