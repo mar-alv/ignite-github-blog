@@ -1,0 +1,43 @@
+import { Meta, Typeset } from "@storybook/blocks"
+
+<Meta title="Typography" />
+
+export const typography = {
+  type: {
+    primary: "Nunito",
+  },
+  weight: {
+    regular: "400",
+    bold: "700"
+  },
+  size: {
+    s12: 12,
+    s14: 14,
+    s16: 16,
+    s18: 18,
+    s20: 20,
+    s24: 24
+  }
+}
+
+export const SampleText = "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+
+# Typography
+
+**Font:** Nunito
+
+**Weights:** 400(regular), 700(bold)
+
+<Typeset
+  fontSizes={[
+    Number(typography.size.s12),
+    Number(typography.size.s14),
+    Number(typography.size.s16),
+    Number(typography.size.s18),
+    Number(typography.size.s20),
+    Number(typography.size.s24)
+  ]}
+  fontWeight={typography.weight.black}
+  sampleText={SampleText}
+  fontFamily={typography.type.primary}
+/>
