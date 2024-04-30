@@ -33,6 +33,10 @@
       "@utils": ["src/utils/"]
     }
   },
-  "include": ["src"],
+  "include": [
+		"src",
+			"stories/components/**/*.stories.tsx",
+			"stories/stories-utils.tsx"
+	],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
