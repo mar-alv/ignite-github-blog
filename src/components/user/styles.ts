@@ -3,7 +3,7 @@ import styled from 'styled-components'
 export const StyledUser = styled.section`
   padding: 3.2rem 4rem;
   gap: 3.2rem;
-  display: flex;
+  display: grid;
 
   border-radius: 1rem;
   background-color: ${(props) => props.theme['base-profile']};
@@ -11,9 +11,18 @@ export const StyledUser = styled.section`
   img {
     width: 14.8rem;
     height: 14.8rem;
+		justify-self: center;
 
     border-radius: .8rem;
   }
+
+	@media (width > 540px) {
+		grid-template-columns: auto 1fr;
+
+		img {
+			justify-self: initial;
+		}
+	}
 `
 
 export const StyledDescription = styled.p`
@@ -37,6 +46,7 @@ export const StyledInfo = styled.div`
   margin-top: 2.4rem;
   gap: 2.4rem;
   display: flex;
+	flex-wrap: wrap;
 
   a {
     color: ${(props) => props.theme['base-label']};

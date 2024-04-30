@@ -4,7 +4,8 @@ import {
 	CalendarDayIcon,
 	ChevronLeftIcon,
 	CommentIcon,
-	GitHubIcon
+	GitHubIcon,
+	Logo
 } from '@components'
 import { dateUtils } from '@utils'
 import { Issue, IssueDto } from '@interfaces'
@@ -43,6 +44,8 @@ export function IssuePage() {
 
   return (
     <div id='app'>
+			<Logo />
+
 			<StyledIssueHeader>
 				<StyledIssueLinks>
 					<Link to='/'>

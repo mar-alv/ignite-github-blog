@@ -14,10 +14,11 @@ export const StyledIssue = styled.article`
 `
 
 export const StyledHeader = styled.div`
-	row-gap: .4rem;
+	gap: .4rem;
 	display: flex;
 	flex-wrap: wrap;
   justify-content: space-between;
+	align-items: baseline;
 
   h2 {
     color: ${(props) => props.theme['base-title']};

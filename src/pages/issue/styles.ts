@@ -66,6 +66,7 @@ export const StyledIssueInfo = styled.div`
   margin-top: 0.8rem;
   gap: 2.4rem;
   display: flex;
+	flex-wrap: wrap;
 
 	span {
 		gap: .8rem;
