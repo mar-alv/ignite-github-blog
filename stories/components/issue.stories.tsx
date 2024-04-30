@@ -1,5 +1,5 @@
-import { Issue } from '@components'
 import { customRender } from '../stories-utils'
+import { Issue } from '@components'
 import type { Meta, StoryObj } from '@storybook/react'
 
 const meta = {

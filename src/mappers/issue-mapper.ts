@@ -3,7 +3,7 @@ import { Issue, IssueDto, IssuesDto } from '@interfaces'
 
 export const issueMapper = {
   toDomains(issuesResponse: IssuesDto): Issue[] {
-    return issuesResponse.items
+    return issuesResponse.items.filter(i => !!i.body)
       .sort((a, b) => arrayUtils.sortByDate(a.created_at, b.created_at))
       .map((i) => {
         return {
