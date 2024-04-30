@@ -32,7 +32,7 @@ export function Search({ issuesCount }: Props) {
         <h3 className='title-s'>Publicações</h3>
 
         <span className='text-s'>
-					{issuesCount} publicações
+					{issuesCount} {`${issuesCount > 1 || issuesCount === 0 ? 'publicações' : 'publicação'}`}
 				</span>
       </StyledHeader>
 
