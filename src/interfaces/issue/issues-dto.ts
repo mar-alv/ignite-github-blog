@@ -1,4 +1,4 @@
-import { IssueDto } from './issueDto'
+import { IssueDto } from './issue-dto'
 
 export interface IssuesDto {
   items: IssueDto[]

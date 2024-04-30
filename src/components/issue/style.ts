@@ -1,42 +1,36 @@
 import styled from 'styled-components'
 
-export const IssueContainer = styled.article`
-  padding: 2rem;
-  border-radius: 10px;
+export const StyledIssue = styled.article`
+  padding: 3.2rem;
 
   cursor: pointer;
-
+  border-radius: 1.0rem;
   background-color: ${(props) => props.theme['base-post']};
 
   &:focus,
   &:hover {
-    outline: 2px solid ${(props) => props.theme.blue};
-  }
-
-  p {
-    margin-top: 2rem;
-
-    font-size: ${(props) => props.theme.fontSize['text-m']};
-    line-height: ${(props) => props.theme.lineHeight['text-m']};
-    color: ${(props) => props.theme['base-text']};
+    outline: .2rem solid ${(props) => props.theme.blue};
   }
 `
 
-export const IssueHeader = styled.header`
-  display: flex;
+export const StyledHeader = styled.div`
+	gap: .4rem;
+	display: flex;
+	flex-wrap: wrap;
   justify-content: space-between;
+	align-items: baseline;
 
   h2 {
-    max-width: 250px;
-
-    font-size: ${(props) => props.theme.fontSize['title-m']};
-    line-height: ${(props) => props.theme.lineHeight['title-m']};
     color: ${(props) => props.theme['base-title']};
   }
 
   span {
-    font-size: ${(props) => props.theme.fontSize['text-s']};
-    line-height: ${(props) => props.theme.lineHeight['text-s']};
     color: ${(props) => props.theme['base-span']};
   }
+`
+
+export const StyledDescription = styled.p`
+	margin-top: 3.2rem;
+
+	color: ${(props) => props.theme['base-text']};
 `

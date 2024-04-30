@@ -16,14 +16,14 @@ export const defaultTheme = {
   'base-input': '#040F1A',
 
   fontSize: {
-    'title-l': '1.5rem',
-    'title-m': '1.25rem',
-    'title-s': '1.125rem',
+    'title-l': '2.4rem',
+    'title-m': '2rem',
+    'title-s': '1.8rem',
 
-    'text-m': '1rem',
-    'text-s': '.875rem',
+    'text-m': '1.6rem',
+    'text-s': '1.4rem',
 
-    link: '0.75rem',
+    link: '1.2rem',
   },
   lineHeight: {
     'title-l': '130%',

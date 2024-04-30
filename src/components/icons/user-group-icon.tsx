@@ -1,13 +1,13 @@
 import { defaultTheme } from '../../styles/themes/default'
-import { faGithub } from '@fortawesome/free-brands-svg-icons'
+import { faUserGroup } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-export function GitHubIcon() {
+export function UserGroupIcon() {
   return (
     <FontAwesomeIcon
       color={defaultTheme['base-label']}
-      icon={faGithub}
-      size="1x"
+      icon={faUserGroup}
+      size='1x'
     />
   )
 }

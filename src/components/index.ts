@@ -1,5 +1,5 @@
 export * from './icons'
 export { Issue } from './issue'
-export { IssueProfile } from './issueProfile'
-export { SearchBar } from './searchBar'
-export { UserProfile } from './userProfile'
+export { Logo } from './logo'
+export { Search } from './search'
+export { User } from './user'

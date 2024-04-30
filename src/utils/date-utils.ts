@@ -8,10 +8,7 @@ export const dateUtils = {
     const hoursPassed = this.getHoursPassed(timeDifferenceInMilliseconds)
 
     if (hoursPassed > 23) {
-      const daysPassed = this.getDaysPassed(
-        timeDifferenceInMilliseconds,
-        hoursPassed,
-      )
+      const daysPassed = this.getDaysPassed(timeDifferenceInMilliseconds)
 
       return `Há ${daysPassed} dia` + (daysPassed > 1 ? 's' : '')
     }
@@ -25,10 +22,11 @@ export const dateUtils = {
   getTimeDifferenceInMilliseconds(date1: Date, date2: Date) {
     return date1.getTime() - date2.getTime()
   },
-  getDaysPassed(hoursPassed: number, timeInMilliseconds: number) {
-    return (timeInMilliseconds / hoursPassed) * 24
+  getDaysPassed(timeInMilliseconds: number) {
+    const millisecondsInDay = 1000 * 60 * 60 * 24
+    return Math.floor(timeInMilliseconds / millisecondsInDay)
   },
   getHoursPassed(timeInMilliseconds: number) {
-    return parseInt((timeInMilliseconds / (1000 * 60 * 60)).toFixed())
+    return Math.floor(timeInMilliseconds / (1000 * 60 * 60))
   },
 }

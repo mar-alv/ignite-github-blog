@@ -1,9 +1,8 @@
 import styled from 'styled-components'
 
-export const Issues = styled.div`
-  margin-top: 3rem;
-
-  gap: 2rem;
+export const StyledIssues = styled.section`
+  margin-top: 4.8rem;
+  gap: 3.2rem;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(36rem, 1fr));
 `

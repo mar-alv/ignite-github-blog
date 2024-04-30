@@ -1,13 +1,13 @@
 import { defaultTheme } from '../../styles/themes/default'
-import { faBuilding } from '@fortawesome/free-regular-svg-icons'
+import { faGithub } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-export function BuildingIcon() {
+export function GitHubIcon() {
   return (
     <FontAwesomeIcon
       color={defaultTheme['base-label']}
-      icon={faBuilding}
-      size="1x"
+      icon={faGithub}
+      size='1x'
     />
   )
 }

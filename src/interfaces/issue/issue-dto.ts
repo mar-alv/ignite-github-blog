@@ -1,4 +1,4 @@
-import { IssueUserDto } from './issueUserDto'
+import { IssueUserDto } from './issue-user-dto'
 
 export interface IssueDto {
   number: number

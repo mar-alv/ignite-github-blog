@@ -1,2 +1,2 @@
-export { issueMapper } from './issueMapper'
-export { profileMapper } from './profileMapper'
+export { issueMapper } from './issue-mapper'
+export { profileMapper } from './profile-mapper'

@@ -1,20 +1,26 @@
-import { Issue as IssuePost, SearchBar, UserProfile } from '@components'
-import { Issues } from './styles'
+import { Issue, Logo, Search, User } from '@components'
 import { IssuesContext } from '@contexts'
+import { StyledIssues } from './styles'
 import { useContext } from 'react'
 
 export function HomePage() {
   const { issues } = useContext(IssuesContext)
 
   return (
-    <main>
-      <UserProfile />
-      <SearchBar issuesCount={issues.length} />
-      <Issues>
-        {issues.map((i, index) => (
-          <IssuePost key={i.id} issue={i} tabIndex={3 + index} />
-        ))}
-      </Issues>
-    </main>
+    <div id='app'>
+			<Logo />
+
+      <User />
+
+			<main>
+				<Search issuesCount={issues.length} />
+
+				<StyledIssues>
+					{issues.map((i, index) => (
+						<Issue key={i.id} issue={i} tabIndex={3 + index} />
+					))}
+				</StyledIssues>
+			</main>
+    </div>
   )
 }
