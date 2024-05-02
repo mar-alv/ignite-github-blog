@@ -1,5 +1,6 @@
 import { dateUtils, stringUtils } from '@utils'
 import { Issue as IIssue } from '@interfaces'
+import { memo } from 'react'
 import { StyledDescription, StyledHeader, StyledIssue } from './style'
 import { useNavigate } from 'react-router-dom'
 
@@ -8,7 +9,7 @@ interface Props {
   tabIndex: number
 }
 
-export function Issue({ issue, tabIndex }: Props) {
+function Component({ issue, tabIndex }: Props) {
   const { id, title, description, createdAt, creatorNickname } = issue
 
   const navigate = useNavigate()
@@ -35,3 +36,5 @@ export function Issue({ issue, tabIndex }: Props) {
     </StyledIssue>
   )
 }
+
+export const Issue = memo(Component)
