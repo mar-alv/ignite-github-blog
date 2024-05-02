@@ -1,4 +1,3 @@
-import { customRender } from '../stories-utils'
 import type { Meta, StoryObj } from '@storybook/react'
 import { Search } from '@components'
 
@@ -10,10 +9,8 @@ const meta = {
   },
   tags: ['autodocs'],
   render: ({...args}) => {
-		return customRender(
-			<Search issuesCount={args.issuesCount} />, {
-				getIssues: async (query?: string) => Promise.resolve()
-			}
+		return (
+			<Search issuesCount={args.issuesCount} onSearch={(query: string) => {}} />
 		)
   }
 } satisfies Meta<typeof Search>

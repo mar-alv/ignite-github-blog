@@ -8,7 +8,7 @@ const meta = {
     layout: 'centered',
   },
   tags: ['autodocs'],
-  render: () => <Logo />,
+  render: () => <Logo />
 } satisfies Meta<typeof Logo>
 
 export default meta

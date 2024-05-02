@@ -1,4 +1,3 @@
-import { customRender } from '../stories-utils'
 import type { Meta, StoryObj } from '@storybook/react'
 import { User } from '@components'
 
@@ -25,11 +24,7 @@ const meta = {
 		]
   },
   tags: ['autodocs'],
-  render: () => {
-		return customRender(
-			<User />
-		)
-  }
+  render: () => <User />
 } satisfies Meta<typeof User>
 
 export default meta

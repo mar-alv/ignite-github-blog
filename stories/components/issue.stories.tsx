@@ -1,4 +1,4 @@
-import { customRender } from '../stories-utils'
+import { BrowserRouter } from 'react-router-dom'
 import { Issue } from '@components'
 import type { Meta, StoryObj } from '@storybook/react'
 
@@ -10,8 +10,10 @@ const meta = {
   },
   tags: ['autodocs'],
   render: ({...args}) => {
-		return customRender(
-			<Issue issue={args.issue} tabIndex={args.tabIndex} />
+		return (
+			<BrowserRouter>
+				<Issue issue={args.issue} tabIndex={args.tabIndex} />
+			</BrowserRouter>
 		)
   }
 } satisfies Meta<typeof Issue>

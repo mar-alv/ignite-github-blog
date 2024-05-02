@@ -16,7 +16,7 @@ type SearchInputs = z.infer<typeof searchSchema>
 
 export function Search({ issuesCount, onSearch }: Props) {
   const { handleSubmit, register } = useForm<SearchInputs>({
-    resolver: zodResolver(searchSchema),
+    resolver: zodResolver(searchSchema)
   })
 
   function handleSearch(data: SearchInputs) {
