@@ -14,15 +14,19 @@ export function HomePage() {
 	})
 
   const getIssues = useCallback(async() => {
-    const q = `${search} repo:mar-alv/ignite-github-blog`
+		try {
+			const q = `${search} repo:mar-alv/ignite-github-blog`
 
-    const response = await api.get('/search/issues', {
-      params: {
-        q,
-      },
-    })
+			const response = await api.get('/search/issues', {
+				params: {
+					q
+				}
+			})
 
-    setIssues(issueMapper.toDomains(response.data))
+			setIssues(issueMapper.toDomains(response.data))
+		} catch (e) {
+			setIssues([])
+		}
   }, [])
 
 	function onSearch(query: string) {

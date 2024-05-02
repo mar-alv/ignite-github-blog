@@ -17,26 +17,30 @@ import {
 	StyledIssueInfo,
 	StyledIssueLinks
 } from './styles'
-import { useCallback, useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 
 export function IssuePage() {
-  const { userNickname, issueId } = useParams()
+	const { userNickname, issueId } = useParams()
 
   const [issue, setIssue] = useState<Issue | null>(null)
 
-  const getIssue = useCallback(async () => {
-    const response = await api.get(
-      `/repos/${userNickname}/ignite-github-blog/issues/${issueId}`,
-    )
+  async function getIssue() {
+		try {
+			const response = await api.get(
+				`/repos/${userNickname}/ignite-github-blog/issues/${issueId}`,
+			)
 
-    const data: IssueDto = response.data
+			const data: IssueDto = response.data
 
-    setIssue(issueMapper.toDomain(data))
-  }, [userNickname, issueId])
+    	setIssue(issueMapper.toDomain(data))
+		} catch (e) {
+			console.log(e);
+		}
+  }
 
   useEffect(() => {
     getIssue()
-  }, [getIssue])
+  }, [])
 
   if (!issue) return <></>
 
