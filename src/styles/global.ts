@@ -1,5 +1,4 @@
 import cover from '../assets/cover.jpg'
-import logo from '../assets/logo.png'
 import { createGlobalStyle } from 'styled-components'
 
 export const GlobalStyle = createGlobalStyle`

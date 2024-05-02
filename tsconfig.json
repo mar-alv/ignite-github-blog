@@ -25,7 +25,6 @@
     "baseUrl": ".",
     "paths": {
       "@components": ["src/components/"],
-      "@contexts": ["src/contexts/"],
       "@interfaces": ["src/interfaces/"],
       "@libs": ["src/libs/"],
       "@mappers": ["src/mappers/"],
@@ -35,8 +34,11 @@
   },
   "include": [
 		"src",
-			"stories/components/**/*.stories.tsx",
-			"stories/stories-utils.tsx"
+		"tests/test-utils.tsx",
+		"jest.config.cjs",
+		"tests/**/*.tests.tsx",
+		"stories/components/**/*.stories.tsx",
+		"stories/stories-utils.tsx"
 	],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

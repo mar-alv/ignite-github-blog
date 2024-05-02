@@ -1,12 +1,11 @@
-import { IssuesContext } from '@contexts'
 import { StyledHeader, StyledInput, StyledSearch } from './styles'
-import { useContext } from 'react'
 import { useForm } from 'react-hook-form'
 import * as z from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
 
 interface Props {
   issuesCount: number
+	onSearch(query: string): void
 }
 
 const searchSchema = z.object({
@@ -15,19 +14,17 @@ const searchSchema = z.object({
 
 type SearchInputs = z.infer<typeof searchSchema>
 
-export function Search({ issuesCount }: Props) {
-  const { getIssues } = useContext(IssuesContext)
-
+export function Search({ issuesCount, onSearch }: Props) {
   const { handleSubmit, register } = useForm<SearchInputs>({
     resolver: zodResolver(searchSchema),
   })
 
-  async function handleSearchIssues(data: SearchInputs) {
-    await getIssues(data.query)
+  function handleSearch(data: SearchInputs) {
+		onSearch(data.query)
   }
 
   return (
-    <StyledSearch onSubmit={handleSubmit(handleSearchIssues)}>
+    <StyledSearch onSubmit={handleSubmit(handleSearch)}>
       <StyledHeader>
         <h3 className='title-s'>Publicações</h3>
 

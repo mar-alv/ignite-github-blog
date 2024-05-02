@@ -5,15 +5,15 @@ import {
   GitHubIcon,
   UserGroupIcon,
 } from '@components'
+import { profileMapper } from '@mappers'
 import {
 	StyledDescription,
 	StyledHeader,
 	StyledInfo,
 	StyledUser,
 } from './styles'
-import { profileMapper } from '@mappers'
-import { User as IUser } from '@interfaces'
 import { useEffect, useState } from 'react'
+import { User as IUser } from '@interfaces'
 
 export function User() {
   const [user, setUser] = useState<IUser | null>(null)
