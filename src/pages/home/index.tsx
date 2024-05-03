@@ -46,7 +46,10 @@ export function HomePage() {
   }, [search])
 
 	const filteredIssues = issues.filter((i) => {
-		return i.title.toUpperCase().includes(search.toUpperCase())
+		const title = i.title.toUpperCase()
+		const description = i.description.toUpperCase()
+
+		return description.includes(search.toUpperCase()) || title.includes(search.toUpperCase())
 	})
 
   return (
@@ -56,7 +59,7 @@ export function HomePage() {
       <User />
 
 			<main>
-				<Search issuesCount={issues.length} onSearch={onSearch} />
+				<Search issuesCount={filteredIssues.length} onSearch={onSearch} />
 
 				<StyledIssues>
 					{filteredIssues.map((i, index) => (

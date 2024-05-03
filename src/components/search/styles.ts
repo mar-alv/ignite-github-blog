@@ -2,6 +2,7 @@ import styled from 'styled-components'
 
 export const StyledSearch = styled.form`
   margin-top: 7.2rem;
+	display: grid;
 `
 
 export const StyledHeader = styled.div`
@@ -18,7 +19,6 @@ export const StyledHeader = styled.div`
 `
 
 export const StyledInput = styled.input`
-	width: 100%;
 	margin-top: 1.2rem;
 	padding: 1.2rem;
 

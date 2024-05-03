@@ -34,10 +34,6 @@ export const StyledDescription = styled(Markdown)`
     font-size: 1.4rem;
     margin-top: 0.8rem;
   }
-
-  img {
-    max-width: 83.2rem;
-  }
 `
 
 export const StyledIssueHeader = styled.header`
