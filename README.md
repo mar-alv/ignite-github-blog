@@ -224,8 +224,6 @@ npm run storybook
 [![React Testing Library](https://img.shields.io/badge/React%20Testing%20Library-E33332?style=for-the-badge&logo=testing-library&logoColor=white)](https://testing-library.com/docs/react-testing-library/intro)
 
 ## 📸 Screenshots and 🎥 Recordings
-For a longer video demonstration click here and like my post on
-<a href='https://www.linkedin.com/posts/marcelo-dos-santos-alvarez-474406180_my-code-solution-for-coffee-delivery-a-challenge-activity-7078453723521253376-7vWp/'>LinkedIn</a>
 
 <div align='center'>
 
