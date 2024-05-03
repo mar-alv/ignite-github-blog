@@ -1,4 +1,3 @@
-import { api } from '@libs'
 import {
 	ArrowUpRightFromSquareIcon,
 	CalendarDayIcon,
@@ -8,39 +7,18 @@ import {
 	Logo
 } from '@components'
 import { dateUtils } from '@utils'
-import { Issue, IssueDto } from '@interfaces'
-import { issueMapper } from '@mappers'
-import { Link, useParams } from 'react-router-dom'
+import { Issue } from '@interfaces'
+import { Link, useLocation } from 'react-router-dom'
 import {
 	StyledDescription,
 	StyledIssueHeader,
 	StyledIssueInfo,
 	StyledIssueLinks
 } from './styles'
-import { useEffect, useState } from 'react'
 
 export function IssuePage() {
-	const { userNickname, issueId } = useParams()
-
-  const [issue, setIssue] = useState<Issue | null>(null)
-
-  async function getIssue() {
-		try {
-			const response = await api.get(
-				`/repos/${userNickname}/ignite-github-blog/issues/${issueId}`,
-			)
-
-			const data: IssueDto = response.data
-
-    	setIssue(issueMapper.toDomain(data))
-		} catch (e) {
-			console.log(e);
-		}
-  }
-
-  useEffect(() => {
-    getIssue()
-  }, [])
+	const location = useLocation()
+	const { issue }: { issue: Issue} = location.state
 
   if (!issue) return <></>
 

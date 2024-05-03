@@ -1,8 +1,8 @@
 import { arrayUtils } from '@utils'
-import { Issue, IssueDto, IssuesDto } from '@interfaces'
+import { Issue, IssuesDto } from '@interfaces'
 
 export const issueMapper = {
-  toDomains(issuesResponse: IssuesDto): Issue[] {
+  toDomain(issuesResponse: IssuesDto): Issue[] {
     return issuesResponse.items.filter(i => !!i.body)
       .sort((a, b) => arrayUtils.sortByDate(a.created_at, b.created_at))
       .map((i) => {
@@ -16,16 +16,5 @@ export const issueMapper = {
           creatorNickname: i.user.login,
         }
       })
-  },
-  toDomain(issue: IssueDto): Issue {
-    return {
-      id: issue.number,
-      title: issue.title,
-      description: issue.body,
-      createdAt: issue.created_at,
-      url: issue.html_url,
-      commentsCount: issue.comments,
-      creatorNickname: issue.user.login,
-    }
-  },
+  }
 }

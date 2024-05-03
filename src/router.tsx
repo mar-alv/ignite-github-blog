@@ -5,7 +5,7 @@ export function Router() {
   return (
     <Routes>
       <Route path='/' element={<HomePage />} />
-      <Route path='/issue/:userNickname/:issueId' element={<IssuePage />} />
+      <Route path='/issue/:issueId' element={<IssuePage />} />
     </Routes>
   )
 }

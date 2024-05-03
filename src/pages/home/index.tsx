@@ -23,7 +23,7 @@ export function HomePage() {
 				}
 			})
 
-			setIssues(issueMapper.toDomains(response.data))
+			setIssues(issueMapper.toDomain(response.data))
 		} catch (e) {
 			setIssues([])
 		}
@@ -43,7 +43,9 @@ export function HomePage() {
     getIssues()
   }, [search])
 
-	const filteredIssues = issues.filter((i) => i.title.includes(search))
+	const filteredIssues = issues.filter((i) => {
+		return i.title.toUpperCase().includes(search.toUpperCase())
+	})
 
   return (
     <div id='app'>

@@ -10,12 +10,16 @@ interface Props {
 }
 
 function Component({ issue, tabIndex }: Props) {
-  const { id, title, description, createdAt, creatorNickname } = issue
+  const { id, title, description, createdAt } = issue
 
   const navigate = useNavigate()
 
   function handleSeeIssue() {
-    navigate(`/issue/${creatorNickname}/${id}`)
+    navigate(`/issue/${id}`, {
+			state: {
+				issue
+			}
+		})
   }
 
   return (
