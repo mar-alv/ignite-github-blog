@@ -18,7 +18,7 @@ import {
 
 export function IssuePage() {
 	const location = useLocation()
-	const { issue }: { issue: Issue} = location.state
+	const { issue }: { issue: Issue } = location.state
 
   if (!issue) return <></>
 
