@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 
 export const StyledIssue = styled.article`
+	max-width: 41.6rem;
   padding: 3.2rem;
 
   cursor: pointer;
