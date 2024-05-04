@@ -101,7 +101,8 @@ npm run storybook
 │   │     └── ... stories dos componentes
 │   └── ... stories genéricos(cor, ícones e tipografia)
 │ tests/
-│   ├── ... testes unitários
+│   ├── context x/
+│   │     └── ... testes unitários
 │   └── ... tests-utils.tsx // funções utilitárias pros testes
 ```
 
@@ -194,7 +195,8 @@ npm run storybook
 │   │     └── ... stories of the components
 │   └── ... generic stories (color, icons e typography)
 │ tests/
-│   ├── ... unit tests
+│   ├── context x/
+│   │     └── ... unit tests
 │   └── ... tests-utils.tsx // util functions for tests
 ```
 

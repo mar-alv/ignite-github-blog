@@ -1,11 +1,11 @@
 import '@testing-library/jest-dom'
 import { act } from 'react';
-import { App } from '../src/app'
+import { App } from '../../src/app'
 import { BrowserRouter } from 'react-router-dom';
 import { fireEvent, render, screen, waitFor } from '@testing-library/react'
-import { testUtils } from './test-utils';
+import { testUtils } from '../test-utils';
 
-jest.mock('../src/libs/axios')
+jest.mock('../../src/libs/axios')
 
 describe('issue page tests', () => {
 	it('should redirect to the home page', async () => {
