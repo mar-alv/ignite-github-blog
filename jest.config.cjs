@@ -2,7 +2,7 @@ module.exports = {
 	preset: 'ts-jest',
 	roots: ['<rootDir>/tests'],
 	testEnvironment: 'jsdom',
-	testMatch: ['**/*.tests.tsx'],
+	testMatch: ['**/*.tests.ts', '**/*.tests.tsx'],
 	moduleNameMapper: {
 		'\\.(css|less|sass|scss)$': '<rootDir>/.tests/styleMock.js',
 		'\\.(gif|png|jpg|ttf|eot|svg)$': '<rootDir>/.tests/fileMock.js',

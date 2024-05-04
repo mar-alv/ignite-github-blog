@@ -21,7 +21,7 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
 
-    "types": ["@types/styled-components-react-native"],
+    "types": ["@types/styled-components-react-native", "jest", "node"],
     "baseUrl": ".",
     "paths": {
       "@components": ["src/components/"],
@@ -36,6 +36,7 @@
 		"src",
 		"tests/test-utils.ts",
 		"jest.config.cjs",
+		"tests/**/*.tests.ts",
 		"tests/**/*.tests.tsx",
 		"stories/components/**/*.stories.tsx"
 	],

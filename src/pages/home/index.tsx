@@ -1,4 +1,5 @@
 import { api } from '@libs'
+import { arrayUtils } from '@utils'
 import { Issue as IIssue } from '@interfaces'
 import { Issue, Logo, Search, User } from '@components'
 import { issueMapper } from '@mappers'
@@ -45,12 +46,7 @@ export function HomePage() {
     getIssues()
   }, [search])
 
-	const filteredIssues = issues.filter((i) => {
-		const title = i.title.toUpperCase()
-		const description = i.description.toUpperCase()
-
-		return description.includes(search.toUpperCase()) || title.includes(search.toUpperCase())
-	})
+	const filteredIssues = arrayUtils.filterIssuesBySearch(issues, search)
 
   return (
     <div id='app'>
