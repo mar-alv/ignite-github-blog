@@ -1,4 +1,5 @@
 export * from './icons'
+export { Comment } from './comment'
 export { Issue } from './issue'
 export { Logo } from './logo'
 export { Search } from './search'

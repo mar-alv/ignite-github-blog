@@ -1,7 +1,16 @@
 import { api } from '@libs'
-import { issueMapper, userMapper } from '@mappers'
+import { commentsMapper, issueMapper, userMapper } from '@mappers'
 
 export const gitHubService = {
+	async getComments(issueId: number) {
+		try {
+			const response = await api.get(`/repos/mar-alv/ignite-github-blog/issues/${issueId}/comments`)
+
+			return commentsMapper.toDomain(response.data)
+		} catch (e) {
+			return []
+		}
+  },
 	async getIsssues(search: string) {
 		try {
 			const q = `${search} repo:mar-alv/ignite-github-blog`
