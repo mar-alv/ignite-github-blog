@@ -2,7 +2,11 @@ import styled from 'styled-components'
 import { StyledMarkdown } from '@libs'
 
 export const StyledDescription = styled(StyledMarkdown)`
+	margin-top: 4rem;
 	padding: 2rem;
+
+	border-radius: 1rem;
+	border: .1rem solid ${(props) => props.theme['base-label']};
 `
 
 export const StyledIssueHeader = styled.header`
