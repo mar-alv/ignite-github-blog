@@ -19,8 +19,6 @@ export function Comment({ comment }: Props) {
 	const { createdAt, message, user } = comment
 	const { avatar, nickname } = user
 
-	console.log(user);
-
 	return (
 		<StyledComment>
 			<StyledCommentSeparator />
