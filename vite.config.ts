@@ -12,7 +12,8 @@ export default defineConfig({
       '@libs': path.resolve(__dirname, './src/libs/'),
       '@mappers': path.resolve(__dirname, './src/mappers/'),
       '@pages': path.resolve(__dirname, './src/pages/'),
-      '@utils': path.resolve(__dirname, './src/utils/'),
+      '@services': path.resolve(__dirname, './src/services/'),
+      '@utils': path.resolve(__dirname, './src/utils/')
     },
   },
 })

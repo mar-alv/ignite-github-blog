@@ -1,11 +1,10 @@
-import { api } from '@libs'
 import {
   ArrowUpRightFromSquareIcon,
   BuildingIcon,
   GitHubIcon,
   UserGroupIcon,
 } from '@components'
-import { profileMapper } from '@mappers'
+import { gitHubService } from '@services'
 import {
 	StyledDescription,
 	StyledHeader,
@@ -18,14 +17,14 @@ import { User as IUser } from '@interfaces'
 export function User() {
   const [user, setUser] = useState<IUser | null>(null)
 
-  async function getUser() {
-    const response = await api.get('/users/mar-alv')
+	async function getUser() {
+		const response = await gitHubService.getUser()
 
-    setUser(profileMapper.toDomain(response.data))
-  }
+		setUser(response)
+	}
 
   useEffect(() => {
-    getUser()
+		getUser()
   }, [])
 
   if (!user) return <></>

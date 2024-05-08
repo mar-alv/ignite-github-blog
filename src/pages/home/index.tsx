@@ -1,8 +1,7 @@
-import { api } from '@libs'
 import { arrayUtils } from '@utils'
+import { gitHubService } from '@services'
 import { Issue as IIssue } from '@interfaces'
 import { Issue, Logo, Search, User } from '@components'
-import { issueMapper } from '@mappers'
 import { StyledIssues } from './styles'
 import { useCallback, useEffect, useState } from 'react'
 
@@ -15,19 +14,9 @@ export function HomePage() {
 	})
 
   const getIssues = useCallback(async() => {
-		try {
-			const q = `${search} repo:mar-alv/ignite-github-blog`
+		const response = await gitHubService.getIsssues(search)
 
-			const response = await api.get('/search/issues', {
-				params: {
-					q
-				}
-			})
-
-			setIssues(issueMapper.toDomain(response.data))
-		} catch (e) {
-			setIssues([])
-		}
+		setIssues(response)
   }, [])
 
 	function onSearch(query: string) {
