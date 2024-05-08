@@ -9,7 +9,7 @@ import {
 } from '@components'
 import { dateUtils } from '@utils'
 import { Comment as IComment, Issue } from '@interfaces'
-import { gitHubService } from 'src/services'
+import { gitHubService } from '@services'
 import { Link, useLocation } from 'react-router-dom'
 import {
 	StyledDescription,
