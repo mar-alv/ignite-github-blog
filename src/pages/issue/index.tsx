@@ -2,12 +2,14 @@ import {
 	ArrowUpRightFromSquareIcon,
 	CalendarDayIcon,
 	ChevronLeftIcon,
+	Comment,
 	CommentIcon,
 	GitHubIcon,
 	Logo
 } from '@components'
 import { dateUtils } from '@utils'
-import { Issue } from '@interfaces'
+import { Comment as IComment, Issue } from '@interfaces'
+import { gitHubService } from 'src/services'
 import { Link, useLocation } from 'react-router-dom'
 import {
 	StyledDescription,
@@ -15,14 +17,27 @@ import {
 	StyledIssueInfo,
 	StyledIssueLinks
 } from './styles'
+import { useEffect, useState } from 'react'
 
 export function IssuePage() {
 	const location = useLocation()
 	const { issue }: { issue: Issue } = location.state
 
+	const [comments, setComments] = useState<IComment[]>([])
+
   if (!issue) return <></>
 
-	const { commentsCount, createdAt, creatorNickname, description, title, url } = issue
+	const { commentsCount, createdAt, creatorNickname, description, id, title, url } = issue
+
+	async function getComments() {
+		const response = await gitHubService.getComments(id)
+
+		setComments(response)
+  }
+
+	useEffect(() => {
+    getComments()
+  }, [])
 
   return (
     <div id='app'>
@@ -67,6 +82,10 @@ export function IssuePage() {
 
 			<main>
 				<StyledDescription>{description}</StyledDescription>
+
+				{comments.map(i => (
+					<Comment key={i.id} comment={i} />
+				))}
 			</main>
     </div>
   )

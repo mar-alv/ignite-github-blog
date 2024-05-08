@@ -20,8 +20,6 @@ export function HomePage() {
   }, [])
 
 	function onSearch(query: string) {
-		console.log('onSearch');
-
 		const url = new URL(String(window.location))
 
 		url.searchParams.set('search', query)
