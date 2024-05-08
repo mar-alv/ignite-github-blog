@@ -1,2 +1,2 @@
 export { issueMapper } from './issue-mapper'
-export { profileMapper } from './profile-mapper'
+export { userMapper } from './user-mapper'

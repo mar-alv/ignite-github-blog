@@ -1,6 +1,6 @@
 import { User, UserDto } from '@interfaces'
 
-export const profileMapper = {
+export const userMapper = {
   toDomain(userResponse: UserDto): User {
     return {
       avatar: userResponse.avatar_url,
