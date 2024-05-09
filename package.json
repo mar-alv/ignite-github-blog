@@ -9,7 +9,7 @@
     "build-storybook": "storybook build",
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
-    "test": "npx jest"
+    "tests": "npx jest"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^6.4.2",

@@ -14,7 +14,7 @@ export function HomePage() {
 	})
 
   const getIssues = useCallback(async() => {
-		const response = await gitHubService.getIsssues(search)
+		const response = await gitHubService.getIssues(search)
 
 		setIssues(response)
   }, [])

@@ -11,7 +11,7 @@ export const gitHubService = {
 			return []
 		}
   },
-	async getIsssues(search: string) {
+	async getIssues(search: string) {
 		try {
 			const q = `${search} repo:mar-alv/ignite-github-blog`
 
