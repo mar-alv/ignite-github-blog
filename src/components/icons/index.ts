@@ -1,6 +1,7 @@
 export { ArrowUpRightFromSquareIcon } from './arrow-up-right-from-square-icon'
 export { BuildingIcon } from './building-icon'
 export { CalendarDayIcon } from './calendar-day-icon'
+export { ChevronDownIcon } from './chevron-down-icon'
 export { ChevronLeftIcon } from './chevron-left-icon'
 export { CommentIcon } from './comment-icon'
 export { GitHubIcon } from './github-icon'

@@ -13,7 +13,7 @@ const SearchSchema = z.object({
 type SearchInputs = z.infer<typeof SearchSchema>
 
 export function SearchIssues() {
-	const { getIssues, filteredIssues, user } = useContext(Context)
+	const { getIssues, filteredIssues, repo, user } = useContext(Context)
 
 	const [search, setSearch] = useState(urlUtils.getParam('search'))
 
@@ -23,11 +23,11 @@ export function SearchIssues() {
 
 	useEffect(() => {
 		handleGetOnSearchChange()
-  }, [search])
+  }, [repo, search])
 
 	async function handleGetOnSearchChange() {
-		// TODO: Pass repo from context
-		await getIssues('ignite-github-blog', search, user!.nickname)
+		if (repo && user)
+			await getIssues(repo.name, search, user.nickname)
 	}
 
   function handleSearch(data: SearchInputs) {

@@ -4,9 +4,10 @@ import {
 	Logo,
 	SearchIssues,
 	SearchUser,
+	SelectRepo,
 	User
 } from '@components'
-import { StyledIssues } from './styles'
+import { StyledFields, StyledIssues } from './styles'
 import { useContext } from 'react'
 
 export function HomePage() {
@@ -19,9 +20,14 @@ export function HomePage() {
 			{user ? (
 				<>
 					<User />
-					<SearchIssues />
+					<StyledFields>
+						<SelectRepo />
+						<SearchIssues />
+					</StyledFields>
 				</>
-				) : <SearchUser />}
+				) : (
+				<SearchUser />
+			)}
 
 			<main>
 				<StyledIssues>

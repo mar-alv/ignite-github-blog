@@ -1,7 +1,6 @@
 import styled from 'styled-components'
 
 export const StyledSearch = styled.form`
-  margin-top: 7.2rem;
 	display: grid;
 `
 
