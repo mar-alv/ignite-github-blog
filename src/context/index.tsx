@@ -25,9 +25,7 @@ interface Props {
 
 export const Context = createContext({} as ContextType)
 
-export const ContextProvider = ({
-  children
-}: Props) => {
+export const ContextProvider = ({ children }: Props) => {
   const [issues, setIssues] = useState<Issue[]>([])
 	const [repo, setRepo] = useState<Repo | null>(null)
 	const [repos, setRepos] = useState<Repo[]>([])
@@ -43,7 +41,12 @@ export const ContextProvider = ({
 		const response = await gitHubService.getRepos(userName)
 
     setRepos(response)
-		setRepo(response[0])
+
+		const repoName = urlUtils.getParam('repo')
+
+		const selectedRepo = response.find(i => i.name === repoName) ?? response[1]
+	
+		selectRepo(selectedRepo)
   }
 
   async function getUser(userName: string) {
@@ -54,6 +57,8 @@ export const ContextProvider = ({
 
 	function selectRepo(selectedRepo: Repo) {
 		setRepo(selectedRepo)
+
+		urlUtils.setParam('repo', selectedRepo.name)
 	}
 
 	const filteredIssues = arrayUtils.filterIssuesBySearch(issues, urlUtils.getParam('search'))
