@@ -26,6 +26,7 @@ export function SearchIssues() {
   }, [search])
 
 	async function handleGetOnSearchChange() {
+		// TODO: Pass repo from context
 		await getIssues('ignite-github-blog', search, user!.nickname)
 	}
 
