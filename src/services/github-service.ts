@@ -1,5 +1,6 @@
 import { api } from '@libs'
-import { commentsMapper, issueMapper, userMapper } from '@mappers'
+import { commentsMapper, issuesMapper, userMapper } from '@mappers'
+import { Repo } from '@interfaces'
 
 export const gitHubService = {
 	async getComments(issueId: number, repo: string, userName: string) {
@@ -21,7 +22,16 @@ export const gitHubService = {
 				}
 			})
 
-			return issueMapper.toDomain(response.data)
+			return issuesMapper.toDomain(response.data)
+		} catch (e) {
+			return []
+		}
+	},
+	async getRepos(userName: string) {
+		try {
+			const response = await api.get(`/users/${userName}/repos`)
+
+			return response.data as Repo[]
 		} catch (e) {
 			return []
 		}
@@ -39,3 +49,4 @@ export const gitHubService = {
 		}
 	}
 }
+

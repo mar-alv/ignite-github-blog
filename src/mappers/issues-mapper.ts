@@ -1,7 +1,7 @@
 import { arrayUtils } from '@utils'
 import { Issue, IssuesDto } from '@interfaces'
 
-export const issueMapper = {
+export const issuesMapper = {
   toDomain(issuesResponse: IssuesDto): Issue[] {
     return issuesResponse.items.filter(i => !!i.body)
       .sort((a, b) => arrayUtils.sortByDate(a.created_at, b.created_at))
