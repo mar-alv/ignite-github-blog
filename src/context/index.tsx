@@ -1,3 +1,4 @@
+import { arrayUtils, urlUtils } from '@utils'
 import { gitHubService } from '@services'
 import { Issue, User } from '@interfaces'
 import {
@@ -8,8 +9,9 @@ import {
 
 interface ContextType {
   user: User | null
+	filteredIssues: Issue[]
   issues: Issue[]
-  getIssues(userName: string, search: string, repo: string): Promise<void>
+  getIssues(repo: string, search: string, userName: string): Promise<void>
   getUser(userName: string): Promise<void>
 }
 
@@ -37,9 +39,12 @@ export const ContextProvider = ({
     setUser(response)
   }
 
-  return (
+	const filteredIssues = arrayUtils.filterIssuesBySearch(issues, urlUtils.getParam('search'))
+
+	return (
     <Context.Provider
       value={{
+				filteredIssues,
 				issues,
 				user,
 				getIssues,
