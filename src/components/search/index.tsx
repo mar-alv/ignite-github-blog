@@ -47,7 +47,7 @@ interface SearchCounterProps {
 export function SearchCounter({ counter, counterPluralText, counterSingularText }: SearchCounterProps) {
 	return (
 		<span className='text-s'>
-			{counter} {`${counter > 1 || counter === 0 ? {counterPluralText} : {counterSingularText}}`}
+			{counter} {`${counter > 1 || counter === 0 ? counterPluralText : counterSingularText}`}
 		</span>
 	)
 }
