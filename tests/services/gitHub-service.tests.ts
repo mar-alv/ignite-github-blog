@@ -61,11 +61,11 @@ describe('gitHubService', () => {
       (api.get as jest.Mock).mockRejectedValue(new Error('Some error'));
 
 			// act
-      const result = await gitHubService.getIssues(search)
+      const response = await gitHubService.getIssues(search)
 
 			// assert
       expect(api.get).toHaveBeenCalledWith('/search/issues', { params: { q: `${search} repo:mar-alv/ignite-github-blog` } })
-      expect(result).toEqual([])
+      expect(response).toEqual([])
     })
   })
 
@@ -88,11 +88,11 @@ describe('gitHubService', () => {
       (api.get as jest.Mock).mockRejectedValue(new Error('Some error'))
 
 			// act
-      const result = await gitHubService.getUser()
+      const response = await gitHubService.getUser()
 
 			// assert
       expect(api.get).toHaveBeenCalledWith('/users/mar-alv')
-      expect(result).toBeNull()
+      expect(response).toBeNull()
     })
   })
 })

@@ -25,6 +25,7 @@
     "baseUrl": ".",
     "paths": {
       "@components": ["src/components/"],
+      "@context": ["src/context/"],
       "@interfaces": ["src/interfaces/"],
       "@libs": ["src/libs/"],
       "@mappers": ["src/mappers/"],
