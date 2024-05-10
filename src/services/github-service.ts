@@ -26,8 +26,11 @@ export const gitHubService = {
 			return []
 		}
 	},
-	async getUser(user: string = 'mar-alv') {
+	async getUser(user: string) {
 		try {
+			if (!user)
+				return null
+
 			const response = await api.get(`/users/${user}`)
 
 			return userMapper.toDomain(response.data)

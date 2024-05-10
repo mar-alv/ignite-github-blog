@@ -10,7 +10,7 @@ export function Input({ register, ...props }: Props) {
   return (
 		<StyledInput
 			className='text-m'
-			placeholder='Buscar conteúdo'
+			placeholder={props.placeholder}
 			tabIndex={2}
 			type='text'
 			{...register(props.name!)}
