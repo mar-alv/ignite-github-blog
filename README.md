@@ -219,6 +219,7 @@ npm run storybook
 ### Utilities
 ![Axios](https://img.shields.io/badge/Axios-764ABC?style=for-the-badge&labelColor=white&logo=axios&logoColor=764ABC)
 [![React Hook Form](https://img.shields.io/badge/React_Hook_Form-FF6B6B?style=for-the-badge&logo=react&logoColor=white)](https://react-hook-form.com/)
+[![React Markdown](https://img.shields.io/badge/React_Markdown-282c34?style=for-the-badge&logo=markdown&logoColor=white)](https://github.com/remarkjs/react-markdown)
 [![Zod](https://img.shields.io/badge/Zod-007ACC?style=for-the-badge&logo=superman&logoColor=white)](https://zod.dev/)
 
 ### Testing
