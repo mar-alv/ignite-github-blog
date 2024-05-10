@@ -1,6 +1,7 @@
 export * from './icons'
 export { Comment } from './comment'
+export { Input } from './input'
 export { Issue } from './issue'
 export { Logo } from './logo'
-export { Search } from './search'
+export * from './search'
 export { User } from './user'
