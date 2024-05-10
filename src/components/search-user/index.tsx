@@ -6,24 +6,32 @@ import { useForm } from 'react-hook-form'
 import * as z from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
 
-const SearchUserSchema = z.object({
+const SearchSchema = z.object({
   user: z.string(),
 })
 
-type SearchUserInputs = z.infer<typeof SearchUserSchema>
+type SearchInputs = z.infer<typeof SearchSchema>
 
 export function SearchUser() {
 	const { getUser } = useContext(Context)
 
 	const [userName, setUserName] = useState(urlUtils.getParam('user'))
 
-	async function handleGetUserOnUserNameChange() {
+	const { handleSubmit, register } = useForm<SearchInputs>({
+    resolver: zodResolver(SearchSchema)
+  })
+
+	useEffect(() => {
+		handleGetOnChange()
+  }, [userName])
+
+	async function handleGetOnChange() {
 		await getUser(userName)
 	}
 
-	useEffect(() => {
-		handleGetUserOnUserNameChange()
-  }, [userName])
+  function handleSearch(data: SearchInputs) {
+    setUserOnUrl(data.user)
+  }
 
 	function setUserOnUrl(query: string) {
 		urlUtils.setParam('user', query)
@@ -31,16 +39,8 @@ export function SearchUser() {
 		setUserName(query)
 	}
 
-	const { handleSubmit, register } = useForm<SearchUserInputs>({
-    resolver: zodResolver(SearchUserSchema)
-  })
-
-  function handleSearchUser(data: SearchUserInputs) {
-    setUserOnUrl(data.user)
-  }
-
   return (
-		<Search onSearch={handleSubmit(handleSearchUser)}>
+		<Search onSearch={handleSubmit(handleSearch)}>
 			<Input name='user' placeholder='Buscar usuário' register={register} />
 		</Search>
   )
