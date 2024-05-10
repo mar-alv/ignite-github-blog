@@ -7,7 +7,7 @@ module.exports = {
 		'\\.(css|less|sass|scss)$': '<rootDir>/.tests/styleMock.js',
 		'\\.(gif|png|jpg|ttf|eot|svg)$': '<rootDir>/.tests/fileMock.js',
     '^@components(.*)': '<rootDir>/src/components$1',
-    '^@contexts(.*)': '<rootDir>/src/contexts$1',
+    '^@context(.*)': '<rootDir>/src/context$1',
     '^@interfaces(.*)': '<rootDir>/src/interfaces$1',
     '^@libs(.*)': '<rootDir>/src/libs$1',
     '^@mappers(.*)': '<rootDir>/src/mappers$1',

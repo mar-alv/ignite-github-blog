@@ -1,5 +1,5 @@
 import { api } from '@libs'
-import { comment, commentDto, issue, issuesDto, user, userDto } from '@mocks'
+import { comment, commentDto, issue, issuesDto, repo, user, userDto } from '@mocks'
 import { gitHubService } from '@services'
 
 jest.mock('../../src/libs/axios')
@@ -18,7 +18,7 @@ describe('gitHubService', () => {
       (api.get as jest.Mock).mockResolvedValue(mockedRresponse)
 
 			// act
-      const response = await gitHubService.getComments(issueId)
+      const response = await gitHubService.getComments(issueId, 'ignite-github-blog', 'mar-alv')
 
 			// assert
       expect(api.get).toHaveBeenCalledWith(`/repos/mar-alv/ignite-github-blog/issues/${issueId}/comments`)
@@ -31,7 +31,7 @@ describe('gitHubService', () => {
 			(api.get as jest.Mock).mockRejectedValue(new Error('Some error'))
 
 			// act
-      const response = await gitHubService.getComments(issueId)
+      const response = await gitHubService.getComments(issueId, 'ignite-github-blog', 'mar-alv')
 
 			// assert
       expect(api.get).toHaveBeenCalledWith(`/repos/mar-alv/ignite-github-blog/issues/${issueId}/comments`)
@@ -45,10 +45,10 @@ describe('gitHubService', () => {
       const search = 'Test Issue'
       const mockedResponse = { data: issuesDto }
       const issues = [issue];
-      (api.get as jest.Mock).mockResolvedValue(mockedResponse);
+      (api.get as jest.Mock).mockResolvedValue(mockedResponse)
 
 			// act
-      const response = await gitHubService.getIssues(search)
+      const response = await gitHubService.getIssues('ignite-github-blog', search, 'mar-alv')
 
 			// assert
       expect(api.get).toHaveBeenCalledWith('/search/issues', { params: { q: `${search} repo:mar-alv/ignite-github-blog` } })
@@ -58,10 +58,10 @@ describe('gitHubService', () => {
     it('should return an empty array if an error occurs', async () => {
 			// arrange
       const search = 'bug';
-      (api.get as jest.Mock).mockRejectedValue(new Error('Some error'));
+      (api.get as jest.Mock).mockRejectedValue(new Error('Some error'))
 
 			// act
-      const response = await gitHubService.getIssues(search)
+      const response = await gitHubService.getIssues('ignite-github-blog', search, 'mar-alv')
 
 			// assert
       expect(api.get).toHaveBeenCalledWith('/search/issues', { params: { q: `${search} repo:mar-alv/ignite-github-blog` } })
@@ -69,30 +69,59 @@ describe('gitHubService', () => {
     })
   })
 
+	describe('getRepos', () => {
+		it('should return an array of repositories for a valid user', async () => {
+			// Arrange
+			const userName = 'mar-alv';
+			const mockedResponse = [repo];
+			(api.get as jest.Mock).mockResolvedValue({ data: mockedResponse });
+
+			// Act
+			const response = await gitHubService.getRepos(userName);
+
+			// Assert
+			expect(api.get).toHaveBeenCalledWith(`/users/${userName}/repos`);
+			expect(response).toEqual(mockedResponse);
+		});
+
+		it('should return an empty array for an invalid user', async () => {
+			// Arrange
+			const userName = 'nonExistentUser';
+			(api.get as jest.Mock).mockRejectedValue({});
+
+			// Act
+			const response = await gitHubService.getRepos(userName);
+
+			// Assert
+			expect(api.get).toHaveBeenCalledWith(`/users/${userName}/repos`);
+			expect(response).toEqual([]);
+		});
+	});
+
   describe('getUser', () => {
-    it('should return user information', async () => {
-			// arrange
-      const mockedResponse = { data: userDto };
-      (api.get as jest.Mock).mockResolvedValue(mockedResponse);
+		it('should return user information', async () => {
+			// Arrange
+			const mockedResponse = { data: userDto };
+			(api.get as jest.Mock).mockResolvedValue(mockedResponse)
 
-			// act
-      const response = await gitHubService.getUser()
+			// Act
+			const response = await gitHubService.getUser('mar-alv')
 
-			// assert
-      expect(api.get).toHaveBeenCalledWith('/users/mar-alv')
-      expect(response).toEqual(user)
-    })
+			// Assert
+			expect(api.get).toHaveBeenCalledWith('/users/mar-alv')
+			expect(response).toEqual(user)
+		})
 
-    it('should return null if an error occurs', async () => {
-			// arrange
-      (api.get as jest.Mock).mockRejectedValue(new Error('Some error'))
+		it('should return null if an error occurs', async () => {
+			// Arrange
+			(api.get as jest.Mock).mockRejectedValue(new Error('Some error'))
 
-			// act
-      const response = await gitHubService.getUser()
+			// Act
+			const response = await gitHubService.getUser('mar-alv')
 
-			// assert
-      expect(api.get).toHaveBeenCalledWith('/users/mar-alv')
-      expect(response).toBeNull()
-    })
-  })
+			// Assert
+			expect(api.get).toHaveBeenCalledWith('/users/mar-alv')
+			expect(response).toBeNull()
+		})
+	})
 })
