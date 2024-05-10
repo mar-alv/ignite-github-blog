@@ -1,23 +1,33 @@
 import { arrayUtils } from '@utils'
+import { Context } from '@context'
 import { gitHubService } from '@services'
-import { Issue as IIssue } from '@interfaces'
-import { Issue, Logo, Search, User } from '@components'
-import { StyledIssues } from './styles'
-import { useCallback, useEffect, useState } from 'react'
+import {
+	Input,
+	Logo,
+	Search,
+	SearchCounter,
+	SearchHeader,
+	SearchTitle,
+	User
+} from '@components'
+import { useContext, useEffect, useState } from 'react'
+import { useForm } from 'react-hook-form'
+import * as z from 'zod'
+import { zodResolver } from '@hookform/resolvers/zod'
+
+const SearchUserSchema = z.object({
+  user: z.string(),
+})
+
+type SearchUserInputs = z.infer<typeof SearchUserSchema>
 
 export function HomePage() {
-	const [issues, setIssues] = useState<IIssue[]>([])
+	const { getIssues, getUser, issues, user } = useContext(Context)
 	const [search, setSearch] = useState(() => {
 		const url = new URL(String(window.location))
 
 		return url.searchParams.get('search') ?? ''
 	})
-
-  const getIssues = useCallback(async() => {
-		const response = await gitHubService.getIssues(search)
-
-		setIssues(response)
-  }, [])
 
 	function onSearch(query: string) {
 		const url = new URL(String(window.location))
@@ -29,26 +39,47 @@ export function HomePage() {
 		setSearch(query)
 	}
 
-  useEffect(() => {
-    getIssues()
-  }, [search])
+	const { handleSubmit, register } = useForm<SearchUserInputs>({
+    resolver: zodResolver(SearchUserSchema)
+  })
+
+  async function handleSearchUser(data: SearchUserInputs) {
+		await getUser(data.user)
+  }
+
+  /* useEffect(() => {
+    getIssues('ignite-github-blog', search, 'mar-alv')
+  }, [search]) */
 
 	const filteredIssues = arrayUtils.filterIssuesBySearch(issues, search)
+
+	console.log(user);
 
   return (
     <div id='app'>
 			<Logo />
 
+			<Search onSearch={handleSubmit(handleSearchUser)}>
+				<SearchHeader>
+					<SearchTitle title='Publicações' />
+					<SearchCounter
+						counter={filteredIssues.length}
+						counterPluralText='publicações'
+						counterSingularText='publicação'
+					/>
+				</SearchHeader>
+
+				<Input name='user' register={register} />
+			</Search>
+
       <User />
 
 			<main>
-				<Search issuesCount={filteredIssues.length} onSearch={onSearch} />
-
-				<StyledIssues>
+				{/* <StyledIssues>
 					{filteredIssues.map((i, index) => (
 						<Issue key={i.id} issue={i} tabIndex={3 + index} />
 					))}
-				</StyledIssues>
+				</StyledIssues> */}
 			</main>
     </div>
   )

@@ -11,9 +11,9 @@ export const gitHubService = {
 			return []
 		}
   },
-	async getIssues(search: string) {
+	async getIssues(repo: string, search: string, userName: string) {
 		try {
-			const q = `${search} repo:mar-alv/ignite-github-blog`
+			const q = `${search} repo:${userName}/${repo}`
 
 			const response = await api.get('/search/issues', {
 				params: {
@@ -26,9 +26,9 @@ export const gitHubService = {
 			return []
 		}
 	},
-	async getUser() {
+	async getUser(user: string = 'mar-alv') {
 		try {
-			const response = await api.get('/users/mar-alv')
+			const response = await api.get(`/users/${user}`)
 
 			return userMapper.toDomain(response.data)
 		} catch (e) {
