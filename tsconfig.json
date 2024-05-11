@@ -41,7 +41,7 @@
 		"src",
 		"stories/components/**/*.stories.tsx",
 		"stories/stories-utils.tsx",
-		"tests/test-utils.ts",
+		"tests/test-utils.tsx",
 		"tests/**/*.tests.ts",
 		"tests/**/*.tests.tsx"
 	],
