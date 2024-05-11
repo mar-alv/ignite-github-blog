@@ -31,17 +31,22 @@ export function SearchIssues() {
 	}
 
   function handleSearch(data: SearchInputs) {
+		console.log(data);
+		
     setSearchOnUrl(data.search)
   }
 
 	function setSearchOnUrl(query: string) {
 		urlUtils.setParam('search', query)
 
+		console.log(query);
+		
+
 		setSearch(query)
 	}
 
   return (
-		<Search onSearch={handleSubmit(handleSearch)}>
+		<Search onSearch={handleSubmit(handleSearch)} data-testid='search-issues' >
 			<SearchHeader>
 				<SearchTitle title='Publicações' />
 				<SearchCounter

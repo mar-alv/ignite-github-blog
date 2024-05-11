@@ -23,24 +23,16 @@ const defaultValue = {
   issues: [],
 	repo: null,
 	repos: [],
-  getIssues(repo: string, search: string, userName: string) {
-		console.log(repo, search, userName)
-
+  getIssues(_repo: string, _search: string, _userName: string) {
 		return Promise.resolve()
 	},
-	getRepos(userName: string) {
-		console.log(userName)
-
+	getRepos(_userName: string) {
 		return Promise.resolve()
 	},
-  getUser(userName: string) {
-		console.log(userName)
-
+  getUser(_userName: string) {
 		return Promise.resolve()
 	},
-	selectRepo(selectedRepo: Repo) {
-		console.log(selectedRepo)
-	}
+	selectRepo(_selectedRepo: Repo) {}
 }
 
 export function customRender(children: ReactNode, customValue = {} as CustomValueProps) {
