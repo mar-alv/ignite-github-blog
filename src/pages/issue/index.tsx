@@ -27,18 +27,17 @@ export function IssuePage() {
 	const [comments, setComments] = useState<IComment[]>([])
 
 	const { issue }: { issue: Issue } = location.state
-	const { user } = useContext(Context)
+	const { repo, user } = useContext(Context)
 
 	useEffect(() => {
-		if (!issue || user)
+		if (!issue || !repo || !user)
 			navigate('/')
 	}, [])
 
 	const { commentsCount, createdAt, creatorNickname, description, id, title, url } = issue
 
 	async function getComments() {
-		// TODO: Pass repo from context
-		const response = await gitHubService.getComments(id, 'ignite-github-blog', user!.nickname)
+		const response = await gitHubService.getComments(id, repo!.name, user!.nickname)
 
 		setComments(response)
   }
@@ -53,7 +52,7 @@ export function IssuePage() {
 
 			<StyledIssueHeader>
 				<StyledIssueLinks>
-					<Link to='/'>
+					<Link to={`/?user=${user!.nickname}&repo=${repo!.name}`}>
 						<ChevronLeftIcon />
 						VOLTAR
 					</Link>

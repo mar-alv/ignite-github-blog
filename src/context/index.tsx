@@ -8,11 +8,11 @@ import {
 } from 'react'
 
 interface ContextType {
-  user: User | null
 	filteredIssues: Issue[]
   issues: Issue[]
 	repo: Repo | null
 	repos: Repo[]
+  user: User | null
   getIssues(repo: string, search: string, userName: string): Promise<void>
 	getRepos(userName: string): Promise<void>
   getUser(userName: string): Promise<void>
