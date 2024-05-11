@@ -8,7 +8,7 @@ import {
 
 interface SearchProps {
 	children: ReactNode
-	onSearch(data: any): void
+	onSearch(event: any): any;
 }
 
 export function Search({ children, onSearch }: SearchProps) {

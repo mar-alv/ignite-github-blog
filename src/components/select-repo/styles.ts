@@ -48,7 +48,7 @@ export const StyledRepos = styled.ul`
 export const StyledRepo = styled.li`
 	display: grid;
 
-  font-size: 1.2rem;
+  font-size: 1.4rem;
 	color: ${(props) => props.theme['base-text']};
 
 	button {

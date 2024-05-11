@@ -28,10 +28,14 @@ Esta é a minha implementação do desafio "GitHub Blog" do terceiro módulo de 
 
 Nela, foram implementadas as seguintes funcionalidades, que serão demonstradas em fotos e vídeos mais adiante:
 ##### **Tela inicial**
-- **Listagem de issues:** Exibe todas as issues atreladas ao repositório
-- **Filtragem de issues:** Filtra as issues por trechos de texto presentes no título ou corpo dela
+- **Busca de usuário:** Busca usuário no GitHub para ver seus dados, repositórios e issues
+- **Exibição de dados do usuário:** Exibe informações como foto, nome, descrição, nick, empresa e quantidade de seguidores do usuário buscado
+- **Escolha de repositório:** Lista repositórios públicos do usuário e permite escolher de qual as issues serão exibidas 
+- **Listagem de issues:** Exibe todas as issues atreladas ao repositório escolhido
+- **Busca de issues:** Filtra as issues por trechos de texto presentes no título ou corpo dela
 ##### **Tela da issue**
 - **Descrição da issue:** Exibe a descrição completa e formatada da issue, quando foi postada e a quantidade de comentários
+- **Comentários da issue:** Exibe comentários postados na issue
 
 #### <a id='pt-br-instrucoes' style='text-decoration: none; color: inherit;'>📖 Instruções</a>
 ##### <a id='pt-br-instalar' style='text-decoration: none; color: inherit;'>📥 Instalar</a>
@@ -61,6 +65,8 @@ npm run storybook
 
 #### <a id='pt-br-estrutura' style='text-decoration: none; color: inherit;'>📂 Estrutura</a>
 ```
+│ __mocks__/
+│   └── ... mocks usados nos stories e testes unuitários
 │ .github/
 │   └── ... imagens e gifs usados nesta documentação
 │ .storybook/
@@ -68,6 +74,8 @@ npm run storybook
 │ .tests/
 │   └── ... arquivos que mantém o funcionamento dos testes
 │ src/
+│   ├── @types/
+│   │     └── ... tipagem pro styled components
 │   ├── assets/
 │   │     └── ... imagens usadas
 │   ├── components/
@@ -77,10 +85,12 @@ npm run storybook
 │   │     │     │     └── styles.ts
 │   │     │     └── ...
 │   │     └── ...
-│   ├── contexts/
-│   │     └── ... actions, contextos e providers
+│   ├── context/
+│   │     └── ... contexto usado
 │   ├── interfaces/
-│   │     └── ... interfaces usadas
+│   │     ├── contexto x/
+│   │     │     └── ... interfaces usadas
+│   │     └── ...
 │   ├── libs/
 │   │     └── ... abstração de libs terceiras
 │   ├── mappers/
@@ -89,8 +99,10 @@ npm run storybook
 │   │     ├── página x/
 │   │     │     ├── componente y/
 │   │     │     │     ├── index.tsx
-│   │     │     │     └── styles.ts
-│   │     │     └── ...
+│   │     │     └──   └── styles.ts
+│   │     └── ...
+│   ├── services/
+│   │     └── ... endpoints usados
 │   ├── styles/
 │   │     └── ... estilos globais e default
 │   ├── utils/
@@ -98,8 +110,11 @@ npm run storybook
 │   └── ...
 │ stories/
 │   ├── components/
+│   │     ├── contexto x/
+│   │     │			└── ... stories dos componentes
 │   │     └── ... stories dos componentes
-│   └── ... stories genéricos(cor, ícones e tipografia)
+│   ├── ... stories genéricos(cor, ícones e tipografia)
+│   └── ... stories-utils.tsx // funções utilitárias pros stories
 │ tests/
 │   ├── context x/
 │   │     └── ... testes unitários
@@ -122,10 +137,14 @@ This is my implementation of the challenge project "GitHub Blog" from the third 
 
 It implements the following functionalities, which will be demonstrated in photos and videos later on:
 ##### **Home screen**
-- **Issues listing:** Shows all issues of the repository
-- **Issues filtering:** Filters issues based on subtexts present in the title or body of it
+- **User search:** Search for users on GitHub to show its info, repositories and issues
+- **Show user's info:** Show user's info like profile image, name, description, nick, company and followers quantity
+- **Repository selection:** List the user's public repositories e allows selecting from which the issues will be listed
+- **Issues listing:** Shows all issues of the selected repository
+- **Issues search:** Filters issues based on subtexts present in the title or body of it
 ##### **Issue screen**
 - **Issue description:** Shows the complete and formatted description of the issue, when it was posted and how many comments it has
+- **Issue's comments:** List the comments posted in the issue
 
 #### <a id='en-instructions' style='text-decoration: none; color: inherit;'>📖 Instructions</a>
 ##### <a id='en-instalar' style='text-decoration: none; color: inherit;'>📥 Install</a>
@@ -155,6 +174,8 @@ npm run storybook
 
 #### <a id='en-structure' style='text-decoration: none; color: inherit;'>📂 Structure</a>
 ```
+│ __mocks__/
+│   └── ... mocks used in stories and unit tests
 │ .github/
 │   └── ... images and gifs used in this documentation
 │ .storybook/
@@ -162,6 +183,8 @@ npm run storybook
 │ .tests/
 │   └── ... files to keep tests working
 │ src/
+│   ├── @types/
+│   │     └── ... typing for styled components
 │   ├── assets/
 │   │     └── ... images used
 │   ├── components/
@@ -171,10 +194,12 @@ npm run storybook
 │   │     │     │     └── styles.ts
 │   │     │     └── ...
 │   │     └── ...
-│   ├── contexts/
-│   │     └── ... actions, contexts and providers
+│   ├── context/
+│   │     └── ... used context
 │   ├── interfaces/
-│   │     └── ... used interfaces
+│   │     ├── context x/
+│   │     │     └── ... used interfaces
+│   │     └── ...
 │   ├── libs/
 │   │     └── ... abstractions of third party libs
 │   ├── mappers/
@@ -183,8 +208,10 @@ npm run storybook
 │   │     ├── page x/
 │   │     │     ├── component y/
 │   │     │     │     ├── index.tsx
-│   │     │     │     └── styles.ts
-│   │     │     └── ...
+│   │     │     └──   └── styles.ts
+│   │     └── ...
+│   ├── services/
+│   │     └── ... used endpoints
 │   ├── styles/
 │   │     └── ... global styles and default theme
 │   ├── utils/
@@ -192,8 +219,11 @@ npm run storybook
 │   └── ...
 │ stories/
 │   ├── components/
-│   │     └── ... stories of the components
-│   └── ... generic stories (color, icons e typography)
+│   │     ├── context x/
+│   │     │			└── ... components stories
+│   │     └── ... componentes stories
+│   ├── ... generic stories(color, icons and typography)
+│   └── ... stories-utils.tsx // util functions for stories
 │ tests/
 │   ├── context x/
 │   │     └── ... unit tests
@@ -230,36 +260,43 @@ npm run storybook
 
 <div align='center'>
 
-  ![home](./.github/home.gif)
-  Home screen
+  ![searching-user](./.github/user-search.gif)
+  User search
 
 </div>
 
 <div align='center'>
 
-  ![home](./.github/home-msite.gif)
-  Home screen mobile
+  ![home-page](./.github/home-page.gif)
+  Home page
 
 </div>
 
 <div align='center'>
 
-  ![adding-coffee](./.github/issue.gif)
-  Issue screen
+  ![home-page-mobile](./.github/home-page-mobile.gif)
+  Home page mobile
 
 </div>
 
 <div align='center'>
 
-  ![removing-coffee](./.github/issue-msite.gif)
-  Issue screen mobile
+  ![issue-page](./.github/issue-page.gif)
+  Issue page
 
 </div>
 
 <div align='center'>
 
-  ![choosing-payment-method](./.github/filtering.gif)
-  Filtering issues
+  ![issue-page-mobile](./.github/issue-page-mobile.gif)
+  Issue page mobile
+
+</div>
+
+<div align='center'>
+
+  ![searching-issues](./.github/issues-search.gif)
+  Issues search
 
 </div>
 
@@ -272,8 +309,15 @@ npm run storybook
 
 <div align='center'>
 
-  ![checkout-stories](./.github/component-stories.gif)
-  Component stories
+  ![common-component-stories](./.github/common-component-stories.gif)
+  Common component stories
+
+</div>
+
+<div align='center'>
+
+  ![search-stories](./.github/search-stories.gif)
+  Search component stories
 
 </div>
 
