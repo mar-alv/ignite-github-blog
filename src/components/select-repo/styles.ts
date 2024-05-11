@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 
 export const StyledSelectRepo = styled.div`
+	gap: 1rem;
   display: grid;
 	position: relative;
 
@@ -33,7 +34,7 @@ export const StyledModal = styled.dialog`
 	padding: 1.2rem;
 	display: block;
 	position: absolute;
-	bottom: -16rem;
+	top: 110%;
 
 	border-radius: .6rem;
 	border: .1rem solid ${(props) => props.theme['base-border']};
