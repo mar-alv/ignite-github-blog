@@ -44,7 +44,7 @@ export const ContextProvider = ({ children }: Props) => {
 
 		const repoName = urlUtils.getParam('repo')
 
-		const selectedRepo = response.find(i => i.name === repoName) ?? response[1]
+		const selectedRepo = response.find(i => i.name === repoName) ?? response[0]
 	
 		selectRepo(selectedRepo)
   }

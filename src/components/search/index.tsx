@@ -1,5 +1,10 @@
 import { ReactNode } from 'react'
-import { StyledHeader, StyledSearch } from './styles'
+import {
+	StyledCounter,
+	StyledHeader,
+	StyledSearch,
+	StyledTitle
+} from './styles'
 
 interface SearchProps {
 	children: ReactNode
@@ -32,9 +37,9 @@ interface SearchTitleProps {
 
 export function SearchTitle({ title }: SearchTitleProps) {
 	return (
-		<h3 className='title-s'>
+		<StyledTitle className='title-s'>
 			{title}
-		</h3>
+		</StyledTitle>
 	)
 }
 
@@ -46,8 +51,8 @@ interface SearchCounterProps {
 
 export function SearchCounter({ counter, counterPluralText, counterSingularText }: SearchCounterProps) {
 	return (
-		<span className='text-s'>
+		<StyledCounter className='text-s'>
 			{counter} {`${counter > 1 || counter === 0 ? counterPluralText : counterSingularText}`}
-		</span>
+		</StyledCounter>
 	)
 }
