@@ -257,6 +257,7 @@ npm run storybook
 [![React Testing Library](https://img.shields.io/badge/React%20Testing%20Library-E33332?style=for-the-badge&logo=testing-library&logoColor=white)](https://testing-library.com/docs/react-testing-library/intro)
 
 ## 📸 Screenshots and 🎥 Recordings
+For a longer video demonstration click here and like my post on [LinkedIn](https://www.linkedin.com/feed/update/urn:li:activity:7195123027691368449/)
 
 <div align='center'>
 
