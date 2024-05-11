@@ -1,19 +1,20 @@
 import { api } from '@libs'
-import { commentsMapper, issueMapper, userMapper } from '@mappers'
+import { commentsMapper, issuesMapper, userMapper } from '@mappers'
+import { Repo } from '@interfaces'
 
 export const gitHubService = {
-	async getComments(issueId: number) {
+	async getComments(issueId: number, repo: string, userName: string) {
 		try {
-			const response = await api.get(`/repos/mar-alv/ignite-github-blog/issues/${issueId}/comments`)
+			const response = await api.get(`/repos/${userName}/${repo}/issues/${issueId}/comments`)
 
 			return commentsMapper.toDomain(response.data)
 		} catch (e) {
 			return []
 		}
   },
-	async getIssues(search: string) {
+	async getIssues(repo: string, search: string, userName: string) {
 		try {
-			const q = `${search} repo:mar-alv/ignite-github-blog`
+			const q = `${search} repo:${userName}/${repo}`
 
 			const response = await api.get('/search/issues', {
 				params: {
@@ -21,14 +22,26 @@ export const gitHubService = {
 				}
 			})
 
-			return issueMapper.toDomain(response.data)
+			return issuesMapper.toDomain(response.data)
 		} catch (e) {
 			return []
 		}
 	},
-	async getUser() {
+	async getRepos(userName: string) {
 		try {
-			const response = await api.get('/users/mar-alv')
+			const response = await api.get(`/users/${userName}/repos`)
+
+			return response.data as Repo[]
+		} catch (e) {
+			return []
+		}
+	},
+	async getUser(user: string) {
+		try {
+			if (!user)
+				return null
+
+			const response = await api.get(`/users/${user}`)
 
 			return userMapper.toDomain(response.data)
 		} catch (e) {
@@ -36,3 +49,4 @@ export const gitHubService = {
 		}
 	}
 }
+

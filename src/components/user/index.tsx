@@ -4,64 +4,53 @@ import {
   GitHubIcon,
   UserGroupIcon,
 } from '@components'
-import { gitHubService } from '@services'
+import { Context } from '@context'
 import {
 	StyledDescription,
 	StyledHeader,
 	StyledInfo,
 	StyledUser,
 } from './styles'
-import { useEffect, useState } from 'react'
-import { User as IUser } from '@interfaces'
+import { useContext } from 'react'
 
 export function User() {
-  const [user, setUser] = useState<IUser | null>(null)
+  const { user } = useContext(Context)
 
-	async function getUser() {
-		const response = await gitHubService.getUser()
-
-		setUser(response)
-	}
-
-  useEffect(() => {
-		getUser()
-  }, [])
-
-  if (!user) return <></>
+	const { avatar, company, description, followers, name, nickname, url } = user!
 
   return (
     <StyledUser>
-      <img src={user.avatar} alt='Imagem de avatar do usuário' />
+      <img src={avatar} alt='Imagem de avatar do usuário' />
 
 			<div>
 				<StyledHeader>
 					<h1 className='title-l'>
-						{user.name}
+						{name}
 					</h1>
 
-					<a href={user.url} target='_blank' rel='noreferrer' tabIndex={1}>
+					<a href={url} target='_blank' rel='noreferrer' tabIndex={1}>
 						GITHUB <ArrowUpRightFromSquareIcon />
 					</a>
 				</StyledHeader>
 
 				<StyledDescription className='text-m'>
-					{user.description}
+					{description}
 				</StyledDescription>
 
 				<StyledInfo className='text-m'>
 					<span>
 						<GitHubIcon />
-						{user.nickname}
+						{nickname}
 					</span>
 
 					<span>
 						<BuildingIcon />
-						{user.company}
+						{company}
 					</span>
 
 					<span>
 						<UserGroupIcon />
-						{user.followers} seguidores
+						{followers} seguidores
 					</span>
 				</StyledInfo>
 			</div>

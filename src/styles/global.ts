@@ -65,7 +65,9 @@ export const GlobalStyle = createGlobalStyle`
 
   a,
   button,
-  input {
+  input,
+	ul,
+	li {
     all: unset;
     appearance: none;
   }

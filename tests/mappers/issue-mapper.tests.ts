@@ -1,11 +1,11 @@
 import { issue, issueDto, issuesDto } from '@mocks'
-import { issueMapper } from '@mappers'
+import { issuesMapper } from '@mappers'
 
-describe('issueMapper', () => {
+describe('issuesMapper', () => {
   describe('toDomain', () => {
     it('should correctly map IssuesDto to an array of Issue objects', () => {
       // act
-      const issues = issueMapper.toDomain(issuesDto)
+      const issues = issuesMapper.toDomain(issuesDto)
 
       // assert
       expect(issues.length).toBe(1)
@@ -22,7 +22,7 @@ describe('issueMapper', () => {
       }
 
       // act
-      const issues = issueMapper.toDomain(issuesDto)
+      const issues = issuesMapper.toDomain(issuesDto)
 
       // assert
       expect(issues.length).toBe(1)
@@ -43,7 +43,7 @@ describe('issueMapper', () => {
 			]
 
       // act
-      const issues = issueMapper.toDomain(issuesDto)
+      const issues = issuesMapper.toDomain(issuesDto)
 
       // assert
       expect(issues).toEqual(expectedIssues)

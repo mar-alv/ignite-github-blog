@@ -1,23 +1,20 @@
+import { customRender } from '../stories-utils'
 import type { Meta, StoryObj } from '@storybook/react'
 import { User } from '@components'
-import { userDto } from '@mocks'
+import { user } from '@mocks'
 
 const meta = {
   title: 'User',
   component: User,
   parameters: {
-    layout: 'centered',
-		mockData: [
-			{
-				url: 'https://api.github.com/users/mar-alv',
-				method: 'GET',
-				status: 200,
-				response: userDto
-			}
-		]
+    layout: 'centered'
   },
   tags: ['autodocs'],
-  render: () => <User />
+  render: () => {
+		return customRender(<User />, {
+			user
+		})
+	}
 } satisfies Meta<typeof User>
 
 export default meta

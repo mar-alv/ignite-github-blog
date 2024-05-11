@@ -1,45 +1,58 @@
-import { StyledHeader, StyledInput, StyledSearch } from './styles'
-import { useForm } from 'react-hook-form'
-import * as z from 'zod'
-import { zodResolver } from '@hookform/resolvers/zod'
+import { ReactNode } from 'react'
+import {
+	StyledCounter,
+	StyledHeader,
+	StyledSearch,
+	StyledTitle
+} from './styles'
 
-interface Props {
-  issuesCount: number
-	onSearch(query: string): void
+interface SearchProps {
+	children: ReactNode
+	onSearch(data: any): void
 }
 
-const searchSchema = z.object({
-  query: z.string(),
-})
-
-type SearchInputs = z.infer<typeof searchSchema>
-
-export function Search({ issuesCount, onSearch }: Props) {
-  const { handleSubmit, register } = useForm<SearchInputs>({
-    resolver: zodResolver(searchSchema)
-  })
-
-  function handleSearch(data: SearchInputs) {
-		onSearch(data.query)
-  }
-
+export function Search({ children, onSearch }: SearchProps) {
   return (
-    <StyledSearch onSubmit={handleSubmit(handleSearch)}>
-      <StyledHeader>
-        <h3 className='title-s'>Publicações</h3>
-
-        <span className='text-s'>
-					{issuesCount} {`${issuesCount > 1 || issuesCount === 0 ? 'publicações' : 'publicação'}`}
-				</span>
-      </StyledHeader>
-
-      <StyledInput
-				className='text-m'
-        placeholder='Buscar conteúdo'
-        tabIndex={2}
-        type='text'
-        {...register('query')}
-      />
+    <StyledSearch onSubmit={onSearch}>
+      {children}
     </StyledSearch>
   )
+}
+
+interface SearchHeaderProps {
+	children: ReactNode
+}
+
+export function SearchHeader({ children }: SearchHeaderProps) {
+	return (
+		<StyledHeader>
+			{children}
+		</StyledHeader>
+	)
+}
+
+interface SearchTitleProps {
+	title: string
+}
+
+export function SearchTitle({ title }: SearchTitleProps) {
+	return (
+		<StyledTitle className='title-s'>
+			{title}
+		</StyledTitle>
+	)
+}
+
+interface SearchCounterProps {
+	counter: number
+	counterPluralText: string
+	counterSingularText: string
+}
+
+export function SearchCounter({ counter, counterPluralText, counterSingularText }: SearchCounterProps) {
+	return (
+		<StyledCounter className='text-s'>
+			{counter} {`${counter > 1 || counter === 0 ? counterPluralText : counterSingularText}`}
+		</StyledCounter>
+	)
 }

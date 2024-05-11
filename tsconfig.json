@@ -25,6 +25,7 @@
     "baseUrl": ".",
     "paths": {
       "@components": ["src/components/"],
+      "@context": ["src/context/"],
       "@interfaces": ["src/interfaces/"],
       "@libs": ["src/libs/"],
       "@mappers": ["src/mappers/"],
@@ -35,13 +36,14 @@
     }
   },
   "include": [
-		"src",
-		"__mocks__/*.ts",
-		"tests/test-utils.ts",
 		"jest.config.cjs",
+		"__mocks__/*.ts",
+		"src",
+		"stories/components/**/*.stories.tsx",
+		"stories/stories-utils.tsx",
+		"tests/test-utils.tsx",
 		"tests/**/*.tests.ts",
-		"tests/**/*.tests.tsx",
-		"stories/components/**/*.stories.tsx"
+		"tests/**/*.tests.tsx"
 	],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

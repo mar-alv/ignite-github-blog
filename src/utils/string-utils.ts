@@ -4,5 +4,5 @@ export const stringUtils = {
 			return ''
 
     return value.length > 180 ? value.substring(0, 180) + '...' : value
-  },
+  }
 }
