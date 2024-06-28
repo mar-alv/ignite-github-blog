@@ -8,118 +8,9 @@
 
   [🎨 Design](https://www.figma.com/file/9n2ccyeFz0vWsJ6Dcx5JuR/GitHub-Blog-(Community)?type=design&node-id=2-12&mode=design&t=IjiuQjVEQfwG7ASw-0)
 
-  [🇧🇷 Português](#pt-br) / [🇬🇧 English](#en)
+  [🇬🇧 English](#en) / [🇧🇷 Português](#pt-br)
 
 </div>
-
-## <a id='pt-br' style='text-decoration: none; color: inherit;'>🇧🇷 Português</a>
-
-### 📚 Sumário
-- [❕ Sobre](#pt-br-sobre)
-- [📖 Instruções](#pt-br-instrucoes)
-  - [📥 Instalar](#pt-br-instalar)
-  - [🚀 Rodar Localmente](#pt-br-localmente)
-  - [📋 Rodar Testes Unitários](#pt-br-testes-unitarios)
-  - [📔 Rodar Storybook](#pt-br-storybook)
-- [📂 Estrutura](#pt-br-estrutura)
-
-#### <a id='pt-br-sobre' style='text-decoration: none; color: inherit;'>❕ Sobre</a>
-Esta é a minha implementação do desafio "GitHub Blog" do terceiro módulo de ReactJS do [Ignite](https://www.rocketseat.com.br/ignite), um curso intermediário e avançado de diversas linguagens de programação e tecnologias oferecido pela [Rocketseat](https://www.rocketseat.com.br/).
-
-Nela, foram implementadas as seguintes funcionalidades, que serão demonstradas em fotos e vídeos mais adiante:
-##### **Tela inicial**
-- **Busca de usuário:** Busca usuário no GitHub para ver seus dados, repositórios e issues
-- **Exibição de dados do usuário:** Exibe informações como foto, nome, descrição, nick, empresa e quantidade de seguidores do usuário buscado
-- **Escolha de repositório:** Lista repositórios públicos do usuário e permite escolher de qual as issues serão exibidas 
-- **Listagem de issues:** Exibe todas as issues atreladas ao repositório escolhido
-- **Busca de issues:** Filtra as issues por trechos de texto presentes no título ou corpo dela
-##### **Tela da issue**
-- **Descrição da issue:** Exibe a descrição completa e formatada da issue, quando foi postada e a quantidade de comentários
-- **Comentários da issue:** Exibe comentários postados na issue
-
-#### <a id='pt-br-instrucoes' style='text-decoration: none; color: inherit;'>📖 Instruções</a>
-##### <a id='pt-br-instalar' style='text-decoration: none; color: inherit;'>📥 Instalar</a>
-Cole o 1º comando em um terminal aberto dentro da pasta de sua preferência para clonar o projeto, em seguida rode uma das versões do 2º comando para instalar as dependências
-```sh
-git clone https://github.com/mar-alv/ignite-github-blog.git
-npm i # Ou npm install
-```
-
-##### <a id='pt-br-localmente' style='text-decoration: none; color: inherit;'>🚀 Rodar Localmente</a>
-Cole o comando em um terminal, a aplicação estará acessível através desse [link](http://localhost:5173)
-```sh
-npm run dev
-```
-
-##### <a id='pt-br-testes-unitarios' style='text-decoration: none; color: inherit;'>📋 Rodar Testes Unitários</a>
-Cole o comando em um terminal, eles serão executados um após o outro apontando se houve testes falhos
-```sh
-npm run tests
-```
-
-##### <a id='pt-br-storybook' style='text-decoration: none; color: inherit;'>📔 Rodar Storybook</a>
-Cole o comando num terminal, a documentação dos componentes do projeto estará acessível através desse [link](http://localhost:6006)
-```sh
-npm run storybook
-```
-
-#### <a id='pt-br-estrutura' style='text-decoration: none; color: inherit;'>📂 Estrutura</a>
-```
-│ __mocks__/
-│   └── ... mocks usados nos stories e testes unuitários
-│ .github/
-│   └── ... imagens e gifs usados nesta documentação
-│ .storybook/
-│   └── ... arquivos que mantém o funcionamento do Storybook
-│ .tests/
-│   └── ... arquivos que mantém o funcionamento dos testes
-│ src/
-│   ├── @types/
-│   │     └── ... tipagem pro styled components
-│   ├── assets/
-│   │     └── ... imagens usadas
-│   ├── components/
-│   │     ├── contexto x/
-│   │     │     ├── componente y/
-│   │     │     │     ├── index.tsx
-│   │     │     │     └── styles.ts
-│   │     │     └── ...
-│   │     └── ...
-│   ├── context/
-│   │     └── ... contexto usado
-│   ├── interfaces/
-│   │     ├── contexto x/
-│   │     │     └── ... interfaces usadas
-│   │     └── ...
-│   ├── libs/
-│   │     └── ... abstração de libs terceiras
-│   ├── mappers/
-│   │     └── ... mappers usados
-│   ├── pages/
-│   │     ├── página x/
-│   │     │     ├── componente y/
-│   │     │     │     ├── index.tsx
-│   │     │     └──   └── styles.ts
-│   │     └── ...
-│   ├── services/
-│   │     └── ... endpoints usados
-│   ├── styles/
-│   │     └── ... estilos globais e default
-│   ├── utils/
-│   │     └── ... funções utilitárias usadas
-│   └── ...
-│ stories/
-│   ├── components/
-│   │     ├── contexto x/
-│   │     │			└── ... stories dos componentes
-│   │     └── ... stories dos componentes
-│   ├── ... stories genéricos(cor, ícones e tipografia)
-│   └── ... stories-utils.tsx // funções utilitárias pros stories
-│ tests/
-│   ├── context x/
-│   │     └── ... testes unitários
-│   └── ... tests-utils.tsx // funções utilitárias pros testes
-```
 
 ## <a id='en' style='text-decoration: none; color: inherit;'>🇬🇧 English</a>
 
@@ -228,6 +119,115 @@ npm run storybook
 │   ├── context x/
 │   │     └── ... unit tests
 │   └── ... tests-utils.tsx // util functions for tests
+```
+
+## <a id='pt-br' style='text-decoration: none; color: inherit;'>🇧🇷 Português</a>
+
+### 📚 Sumário
+- [❕ Sobre](#pt-br-sobre)
+- [📖 Instruções](#pt-br-instrucoes)
+  - [📥 Instalar](#pt-br-instalar)
+  - [🚀 Rodar Localmente](#pt-br-localmente)
+  - [📋 Rodar Testes Unitários](#pt-br-testes-unitarios)
+  - [📔 Rodar Storybook](#pt-br-storybook)
+- [📂 Estrutura](#pt-br-estrutura)
+
+#### <a id='pt-br-sobre' style='text-decoration: none; color: inherit;'>❕ Sobre</a>
+Esta é a minha implementação do desafio "GitHub Blog" do terceiro módulo de ReactJS do [Ignite](https://www.rocketseat.com.br/ignite), um curso intermediário e avançado de diversas linguagens de programação e tecnologias oferecido pela [Rocketseat](https://www.rocketseat.com.br/).
+
+Nela, foram implementadas as seguintes funcionalidades, que serão demonstradas em fotos e vídeos mais adiante:
+##### **Tela inicial**
+- **Busca de usuário:** Busca usuário no GitHub para ver seus dados, repositórios e issues
+- **Exibição de dados do usuário:** Exibe informações como foto, nome, descrição, nick, empresa e quantidade de seguidores do usuário buscado
+- **Escolha de repositório:** Lista repositórios públicos do usuário e permite escolher de qual as issues serão exibidas 
+- **Listagem de issues:** Exibe todas as issues atreladas ao repositório escolhido
+- **Busca de issues:** Filtra as issues por trechos de texto presentes no título ou corpo dela
+##### **Tela da issue**
+- **Descrição da issue:** Exibe a descrição completa e formatada da issue, quando foi postada e a quantidade de comentários
+- **Comentários da issue:** Exibe comentários postados na issue
+
+#### <a id='pt-br-instrucoes' style='text-decoration: none; color: inherit;'>📖 Instruções</a>
+##### <a id='pt-br-instalar' style='text-decoration: none; color: inherit;'>📥 Instalar</a>
+Cole o 1º comando em um terminal aberto dentro da pasta de sua preferência para clonar o projeto, em seguida rode uma das versões do 2º comando para instalar as dependências
+```sh
+git clone https://github.com/mar-alv/ignite-github-blog.git
+npm i # Ou npm install
+```
+
+##### <a id='pt-br-localmente' style='text-decoration: none; color: inherit;'>🚀 Rodar Localmente</a>
+Cole o comando em um terminal, a aplicação estará acessível através desse [link](http://localhost:5173)
+```sh
+npm run dev
+```
+
+##### <a id='pt-br-testes-unitarios' style='text-decoration: none; color: inherit;'>📋 Rodar Testes Unitários</a>
+Cole o comando em um terminal, eles serão executados um após o outro apontando se houve testes falhos
+```sh
+npm run tests
+```
+
+##### <a id='pt-br-storybook' style='text-decoration: none; color: inherit;'>📔 Rodar Storybook</a>
+Cole o comando num terminal, a documentação dos componentes do projeto estará acessível através desse [link](http://localhost:6006)
+```sh
+npm run storybook
+```
+
+#### <a id='pt-br-estrutura' style='text-decoration: none; color: inherit;'>📂 Estrutura</a>
+```
+│ __mocks__/
+│   └── ... mocks usados nos stories e testes unuitários
+│ .github/
+│   └── ... imagens e gifs usados nesta documentação
+│ .storybook/
+│   └── ... arquivos que mantém o funcionamento do Storybook
+│ .tests/
+│   └── ... arquivos que mantém o funcionamento dos testes
+│ src/
+│   ├── @types/
+│   │     └── ... tipagem pro styled components
+│   ├── assets/
+│   │     └── ... imagens usadas
+│   ├── components/
+│   │     ├── contexto x/
+│   │     │     ├── componente y/
+│   │     │     │     ├── index.tsx
+│   │     │     │     └── styles.ts
+│   │     │     └── ...
+│   │     └── ...
+│   ├── context/
+│   │     └── ... contexto usado
+│   ├── interfaces/
+│   │     ├── contexto x/
+│   │     │     └── ... interfaces usadas
+│   │     └── ...
+│   ├── libs/
+│   │     └── ... abstração de libs terceiras
+│   ├── mappers/
+│   │     └── ... mappers usados
+│   ├── pages/
+│   │     ├── página x/
+│   │     │     ├── componente y/
+│   │     │     │     ├── index.tsx
+│   │     │     └──   └── styles.ts
+│   │     └── ...
+│   ├── services/
+│   │     └── ... endpoints usados
+│   ├── styles/
+│   │     └── ... estilos globais e default
+│   ├── utils/
+│   │     └── ... funções utilitárias usadas
+│   └── ...
+│ stories/
+│   ├── components/
+│   │     ├── contexto x/
+│   │     │			└── ... stories dos componentes
+│   │     └── ... stories dos componentes
+│   ├── ... stories genéricos(cor, ícones e tipografia)
+│   └── ... stories-utils.tsx // funções utilitárias pros stories
+│ tests/
+│   ├── context x/
+│   │     └── ... testes unitários
+│   └── ... tests-utils.tsx // funções utilitárias pros testes
 ```
 
 ## 🧰 Technologies
