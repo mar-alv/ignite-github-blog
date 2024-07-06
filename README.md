@@ -39,10 +39,17 @@ It implements the following functionalities, which will be demonstrated in photo
 
 #### <a id='en-instructions' style='text-decoration: none; color: inherit;'>📖 Instructions</a>
 ##### <a id='en-instalar' style='text-decoration: none; color: inherit;'>📥 Install</a>
-Paste the 1º command into a terminal opened within a folder of your preference to clone the project, then run one of the versions of the 2º command to install the dependencies
+Paste the 1º command into a terminal opened within a folder of your preference to clone the project
 ```sh
 git clone https://github.com/mar-alv/ignite-coffee-delivery.git
-npm i # Or npm install
+```
+
+Then run one of the versions of the 2º command to install the dependencies
+```sh
+npm i
+```
+```sh
+npm install
 ```
 
 ##### <a id='en-locally' style='text-decoration: none; color: inherit;'>🚀 Run Locally</a>
@@ -148,10 +155,17 @@ Nela, foram implementadas as seguintes funcionalidades, que serão demonstradas 
 
 #### <a id='pt-br-instrucoes' style='text-decoration: none; color: inherit;'>📖 Instruções</a>
 ##### <a id='pt-br-instalar' style='text-decoration: none; color: inherit;'>📥 Instalar</a>
-Cole o 1º comando em um terminal aberto dentro da pasta de sua preferência para clonar o projeto, em seguida rode uma das versões do 2º comando para instalar as dependências
+Cole o 1º comando em um terminal aberto dentro da pasta de sua preferência para clonar o projeto
 ```sh
 git clone https://github.com/mar-alv/ignite-github-blog.git
-npm i # Ou npm install
+```
+
+Em seguida rode uma das versões do 2º comando para instalar as dependências
+```sh
+npm i
+```
+```sh
+npm install
 ```
 
 ##### <a id='pt-br-localmente' style='text-decoration: none; color: inherit;'>🚀 Rodar Localmente</a>
