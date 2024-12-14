@@ -8,7 +8,7 @@
 
   [🎨 Design](https://www.figma.com/file/9n2ccyeFz0vWsJ6Dcx5JuR/GitHub-Blog-(Community)?type=design&node-id=2-12&mode=design&t=IjiuQjVEQfwG7ASw-0)
 
-  [🇵🇹 Português](./docs/README-pt.md)
+  [🇧🇷 Português](./docs/README-pt.md)
 
 </div>
 
